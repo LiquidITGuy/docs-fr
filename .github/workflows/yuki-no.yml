@@ -22,7 +22,7 @@ jobs:
           # Using an old commit hash will cause the initial action run to be very slow
           # as it processes each historical commit.
           # (Subsequent runs are faster as they skip previously processed commits.)
-          track-from: <RECENT_COMMIT_HASH> # Replace with a recent commit hash from vitejs/vite
+          track-from: 6c8a5a27e645a182f5b03a4ed6aa726eab85993f # Replace with a recent commit hash from vitejs/vite
 
           # Files to track (Glob patterns)
           include: |
