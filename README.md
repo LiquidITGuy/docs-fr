@@ -1,7 +1,3 @@
-<!-- You can remove the following notice from your fork -->
-## This repo is a template for [Vite.js docs translation repositories](https://github.com/vitejs?q=docs). See [guide](/.github/CONTRIBUTING.md).
-
----
 <p align="center">
   <a href="https://vite.dev" target="_blank" rel="noopener noreferrer">
     <img width="180" src="https://vite.dev/logo.svg" alt="Vite logo">
@@ -19,28 +15,28 @@
 
 # Vite ⚡
 
-> Next Generation Frontend Tooling
+> Outil Frontend de nouvelle génération
 
-- 💡 Instant Server Start
-- ⚡️ Lightning Fast HMR
-- 🛠️ Rich Features
-- 📦 Optimized Build
-- 🔩 Universal Plugin Interface
-- 🔑 Fully Typed APIs
+- 💡 Démarrage de serveur instantané
+- ⚡️ HMR ultra rapide
+- 🛠️ Fonctionnalités riches
+- 📦 Build optimisé
+- 🔩 Interface de plugin universelle
+- 🔑 APIs fortement typées
 
-Vite (French word for "quick", pronounced [`/vit/`](https://cdn.jsdelivr.net/gh/vitejs/vite@main/docs/public/vite.mp3), like "veet") is a new breed of frontend build tooling that significantly improves the frontend development experience. It consists of two major parts:
+Vite (Mot français pour "rapide", prononcé [`/vit/`](https://cdn.jsdelivr.net/gh/vitejs/vite@main/docs/public/vite.mp3)) est un nouveau genre d'outil de build frontend qui améliore significativement l'expérience développeur frontend. Il est constitué de deux parties principales:
 
-- A dev server that serves your source files over [native ES modules](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules), with [rich built-in features](https://vite.dev/guide/features.html) and astonishingly fast [Hot Module Replacement (HMR)](https://vite.dev/guide/features.html#hot-module-replacement).
+- Un serveur de développement qui sert vos ressources à travers des [modules natifs ES](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules), avec des [fonctionnalités incluses variées](https://vite.dev/guide/features.html) et un système de [Hot Module Replacement (HMR)](https://vite.dev/guide/features.html#hot-module-replacement) étonnamment rapide.
 
-- A [build command](https://vite.dev/guide/build.html) that bundles your code with [Rollup](https://rollupjs.org), pre-configured to output highly optimized static assets for production.
+- Une [commande de build](https://vite.dev/guide/build.html) qui bundle votre code avec [Rollup](https://rollupjs.org), préconfiguré pour sortir des assets hautement optimisés pour la production.
 
-In addition, Vite is highly extensible via its [Plugin API](https://vite.dev/guide/api-plugin.html) and [JavaScript API](https://vite.dev/guide/api-javascript.html) with full typing support.
+De plus, Vite est hautement extensible via son [API de Plugin](https://vite.dev/guide/api-plugin.html) et son [API JavaScript](https://vite.dev/guide/api-javascript.html) avec du support complet de typage.
 
-[Read the Docs to Learn More](https://vite.dev).
+[Lire la documentation pour en savoir plus](https://vite.dev).
 
-## Packages
+## Paquets
 
-| Package                                         | Version (click for changelogs)                                                                                                    |
+| Paquet                                         | Version (cliquer pour le changelog )                                                                                                    |
 | ----------------------------------------------- | :-------------------------------------------------------------------------------------------------------------------------------- |
 | [vite](packages/vite)                           | [![vite version](https://img.shields.io/npm/v/vite.svg?label=%20)](packages/vite/CHANGELOG.md)                                    |
 | [@vitejs/plugin-legacy](packages/plugin-legacy) | [![plugin-legacy version](https://img.shields.io/npm/v/@vitejs/plugin-legacy.svg?label=%20)](packages/plugin-legacy/CHANGELOG.md) |
@@ -48,9 +44,9 @@ In addition, Vite is highly extensible via its [Plugin API](https://vite.dev/gui
 
 ## Contribution
 
-See [Contributing Guide](CONTRIBUTING.md).
+Voir le [Guide de contribution](CONTRIBUTING.md).
 
-## License
+## Licence
 
 [MIT](LICENSE).
 
