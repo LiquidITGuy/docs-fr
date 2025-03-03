@@ -1,7 +1,7 @@
 ---
 layout: page
-title: Meet the Team
-description: The development of Vite is guided by an international team.
+title: Rencontrer l'équipe
+description: Le développement de Vite est mené par une équipe internationale.
 ---
 
 <script setup>
@@ -18,16 +18,14 @@ import { core, emeriti } from './_data/team'
   <VPTeamPageTitle>
     <template #title>Meet the Team</template>
     <template #lead>
-      The development of Vite is guided by an international team, some of whom
-      have chosen to be featured below.
+      Le développement de Vite est mené par une équipe internationale, certains d'entre eux ont choisi d'être présentés ci-dessous.
     </template>
   </VPTeamPageTitle>
   <VPTeamMembers :members="core" />
   <VPTeamPageSection>
     <template #title>Team Emeriti</template>
     <template #lead>
-      Here we honor some no-longer-active team members who have made valuable
-      contributions in the past.
+      Ici, nous honorons certains membres de l'équipe qui ne sont plus actifs et ont fait des contributions précieuses dans le passé.
     </template>
     <template #members>
       <VPTeamMembers size="small" :members="emeriti" />

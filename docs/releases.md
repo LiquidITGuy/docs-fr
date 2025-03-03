@@ -1,61 +1,61 @@
 # Releases
 
-Vite releases follow [Semantic Versioning](https://semver.org/). You can see the latest stable version of Vite in the [Vite npm package page](https://www.npmjs.com/package/vite).
+Vite suit le [Versioning sémantique](https://semver.org/). Vous pouvez voir la dernière version stable de Vite dans la [page du package npm de Vite](https://www.npmjs.com/package/vite).
 
-A full changelog of past releases is [available on GitHub](https://github.com/vitejs/vite/blob/main/packages/vite/CHANGELOG.md).
+Un journal complet des releases passées est [disponible sur GitHub](https://github.com/vitejs/vite/blob/main/packages/vite/CHANGELOG.md).
 
-## Release Cycle
+## Cycle de release
 
-Vite does not have a fixed release cycle.
+Vite n’a pas de cycle de release fixe.
 
-- **Patch** releases are released as needed (usually every week).
-- **Minor** releases always contain new features and are released as needed. Minor releases always have a beta pre-release phase (usually every two months).
-- **Major** releases generally align with [Node.js EOL schedule](https://endoflife.date/nodejs), and will be announced ahead of time. These releases will go through long-term discussions with the ecosystem, and have alpha and beta pre-release phases (usually every year).
+- Les releases de **Patch** sont publiés quand cela est nécessaire (généralement toutes les semaines).
+- Les releases **Mineures** contiennent de nouvelles fonctionnalités et sont publiées quand cela est nécessaire. Les releases **Mineures** ont toujours une phase de prérelease bêta (généralement tous les deux mois).
+- Les releases **Majeures** sont généralement alignées avec le [calendrier de fin de vie de Node.js](https://endoflife.date/nodejs) et seront annoncées à l’avance. Ces releases passeront par des discussions longues avec l’écosystème et auront une phase de prérelease alpha et bêta (généralement tous les ans).
 
-The Vite versions ranges that are supported by the Vite team is automatically determined by:
+Les plages de versions de Vite supportées par l’équipe Vite sont déterminées automatiquement par :
 
-- **Current Minor** gets regular fixes.
-- **Previous Major** (only for its latest minor) and **Previous Minor** receives important fixes and security patches.
-- **Second-to-last Major** (only for its latest minor) and **Second-to-last Minor** receives security patches.
-- All versions before these are no longer supported.
+- **Mineur actuel** reçoit des correctifs réguliers.
+- **Majeur précédent** (seulement pour sa dernière mineure) et **Mineur précédent** reçoivent des correctifs importants et des correctifs de sécurité.
+- **Avant dernière Majeure** (seulement pour sa dernière mineure) et **Avant dernière Mineure** reçoivent des correctifs de sécurité.
+- Toutes les versions avant ces dernières sont plus supportées.
 
-As an example, if the Vite latest is at 5.3.10:
+Par exemple, si la dernière version de Vite est 5.3.10 :
 
-- Regular patches are released for `vite@5.3`.
-- Important fixes and security patches are backported to `vite@4` and `vite@5.2`.
-- Security patches are also backported to `vite@3`, and `vite@5.1`.
-- `vite@2` and `vite@5.0` are no longer supported. Users should upgrade to receive updates.
+- Les correctifs réguliers sont publiés pour`vite@5.3`.
+- Les correctifs importants et les correctifs de sécurité sont apportés à `vite@4`et`vite@5.2`.
+- Les correctifs de sécurité sont également apportés à`vite@3`, et`vite@5.1`.
+- `vite@2`et `vite@5.0`ne sont plus supportés. Les utilisateurs doivent mettre à jour pour recevoir des mises à jour.
 
-We recommend updating Vite regularly. Check out the [Migration Guides](https://vite.dev/guide/migration.html) when you update to each Major. The Vite team works closely with the main projects in the ecosystem to ensure the quality of new versions. We test new Vite versions before releasing them through the [vite-ecosystem-ci project](https://github.com/vitejs/vite-ecosystem-ci). Most projects using Vite should be able to quickly offer support or migrate to new versions as soon as they are released.
+Nous recommandons de mettre à jour Vite régulièrement. Consultez les [guides de migration](https://vite.dev/guide/migration.html) lorsque vous mettez à jour vers chaque Majeur. L’équipe Vite travaille de près avec les principaux projets de l’écosystème pour garantir la qualité des nouvelles versions. Nous testons les nouvelles versions de Vite avant de les publier via le projet [vite-ecosystem-ci](https://github.com/vitejs/vite-ecosystem-ci). La plupart des projets utilisant Vite devraient être en mesure de proposer un support ou de migrer vers de nouvelles versions dès qu’elles sont publiées.
 
-## Semantic Versioning Edge Cases
+## Edge Cases du versionning sémantique
 
-### TypeScript Definitions
+### Définitions TypeScript
 
-We may ship incompatible changes to TypeScript definitions between minor versions. This is because:
+Nous pouvons publier des modifications incompatibles entre les versions mineures. Cela est dû au fait que :
 
-- Sometimes TypeScript itself ships incompatible changes between minor versions, and we may have to adjust types to support newer versions of TypeScript.
-- Occasionally we may need to adopt features that are only available in a newer version of TypeScript, raising the minimum required version of TypeScript.
-- If you are using TypeScript, you can use a semver range that locks the current minor and manually upgrade when a new minor version of Vite is released.
+- Parfois, TypeScript lui-même publie des modifications incompatibles entre les versions mineures, et nous devons ajuster les types pour supporter de nouvelles versions de TypeScript.
+- Parfois, nous devons adopter des fonctionnalités qui ne sont disponibles que dans une nouvelle version de TypeScript, ce qui augmente la version minimale requise de TypeScript.
+- Si vous utilisez TypeScript, vous pouvez utiliser une plage semver qui verrouille la dernière version mineure et mettre à jour manuellement lorsqu’une nouvelle version mineure de Vite est publiée.
 
 ### esbuild
 
-[esbuild](https://esbuild.github.io/) is pre-1.0.0 and sometimes it has a breaking change we may need to include to have access to newer features and performance improvements. We may bump the esbuild's version in a Vite Minor.
+[Esbuild](https://esbuild.github.io/) est pre-1.0.0 et parfois il a un changement cassant que nous devons inclure pour avoir accès aux nouvelles fonctionnalités et améliorations de performance. Nous pouvons augmenter la version d’esbuild dans une version mineure de Vite.
 
-### Node.js non-LTS versions
+### Versions de Node.js non LTS
 
-Non-LTS Node.js versions (odd-numbered) are not tested as part of Vite's CI, but they should still work before their [EOL](https://endoflife.date/nodejs).
+Les versions de Node.js non LTS (les numéros impairs) ne sont pas testées comme partie de Vite's CI, mais elles devraient encore fonctionner avant leur [fin de vie](https://endoflife.date/nodejs).
 
-## Pre Releases
+## Préreleases
 
-Minor releases typically go through a non-fixed number of beta releases. Major releases will go through an alpha phase and a beta phase.
+Les releases mineures passent généralement par un nombre non fixe de bêta. Les releases majeures passeront par une phase alpha et une phase bêta.
 
-Pre-releases allow early adopters and maintainers from the Ecosystem to do integration and stability testing, and provide feedback. Do not use pre-releases in production. All pre-releases are considered unstable and may ship breaking changes in between. Always pin to exact versions when using pre-releases.
+Les préreleases permettent aux utilisateurs et aux contributeurs de l’écosystème de faire des tests d’intégration et de stabilité, et de fournir des retours. Ne pas utiliser les préreleases en production. Toutes les préreleases sont considérées comme instables et peuvent contenir des changements cassants entre les versions. Toujours utiliser une version exacte lorsque vous utilisez les préreleases.
 
-## Deprecations
+## Dépréciations
 
-We periodically deprecate features that have been superseded by better alternatives in Minor releases. Deprecated features will continue to work with a type or logged warning. They will be removed in the next major release after entering deprecated status. The [Migration Guide](https://vite.dev/guide/migration.html) for each major will list these removals and document an upgrade path for them.
+Nous déprécions périodiquement des fonctionnalités qui ont été remplacées par des alternatives meilleures dans les releases mineures. Les fonctionnalités dépréciées continueront à fonctionner avec un avertissement de type ou un message de journalisation. Elles seront supprimées dans la prochaine version majeure après avoir été dépréciées. Le [Guide de migration](https://vite.dev/guide/migration.html) pour chaque majeur listera ces suppressions et documentera un chemin de migration pour chacune d’elles.
 
-## Experimental Features
+## Fonctionnalités expérimentales
 
-Some features are marked as experimental when released in a stable version of Vite. Experimental features allow us to gather real-world experience to influence their final design. The goal is to let users provide feedback by testing them in production. Experimental features themselves are considered unstable, and should only be used in a controlled manner. These features may change between Minors, so users must pin their Vite version when they rely on them. We will create [a GitHub discussion](https://github.com/vitejs/vite/discussions/categories/feedback?discussions_q=is%3Aopen+label%3Aexperimental+category%3AFeedback) for each experimental feature.
+Certaines fonctionnalités sont marquées comme expérimentales lorsqu’elles sont publiées dans une version stable de Vite. Les fonctionnalités expérimentales permettent de collecter des retours d’utilisation dans le monde réel pour influencer leur conception finale. Le but est de permettre aux utilisateurs de fournir des retours en testant ces fonctionnalités en production. Les fonctionnalités expérimentales sont considérées comme instables et ne doivent être utilisées que dans un environnement contrôlé. Ces fonctionnalités peuvent changer entre les releases mineures, donc les utilisateurs doivent verrouiller la version de Vite lorsqu’ils en dépendent. Nous créerons une [discussion GitHub](https://github.com/vitejs/vite/discussions/categories/feedback?discussions_q=is%3Aopen+label%3Aexperimental+category%3AFeedback) pour chaque fonctionnalité expérimentale.
