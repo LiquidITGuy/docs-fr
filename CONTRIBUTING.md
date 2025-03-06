@@ -2,19 +2,19 @@
 
 Nous sommes très heureux que vous souhaitiez contribuer à Vite ! Avant de soumettre votre contribution, veuillez lire le guide suivant. Nous vous suggérons également de lire la [Philosophie du projet](https://vitejs.dev/guide/philosophy) dans notre documentation.
 
-Vous pouvez utiliser [StackBlitz Codeflow](https://stackblitz.com/codeflow) pour corriger les bugs ou implémenter des fonctionnalités. Vous verrez un bouton Codeflow sur les problèmes pour commencer une PR pour les corriger. Un bouton apparaîtra également sur les PR pour les revoir sans avoir besoin de vérifier la branche localement. Lorsque vous utilisez Codeflow, le dépôt Vite sera cloné pour vous dans un éditeur en ligne, avec le package Vite construit en mode watch prêt à tester vos modifications. Si vous souhaitez en savoir plus, consultez la [documentation Codeflow](https://developer.stackblitz.com/codeflow/what-is-codeflow).
+Vous pouvez utiliser [StackBlitz Codeflow](https://stackblitz.com/codeflow) pour corriger les bugs ou implémenter des fonctionnalités. Vous verrez un bouton Codeflow sur les bugs pour commencer une PR pour les corriger. Un bouton apparaîtra également sur les PR pour les revoir sans avoir besoin de vérifier la branche localement. Lorsque vous utilisez Codeflow, le dépôt Vite sera cloné pour vous dans un éditeur en ligne, avec le package Vite construit en mode watch prêt à tester vos modifications. Si vous souhaitez en savoir plus, consultez la [documentation Codeflow](https://developer.stackblitz.com/codeflow/what-is-codeflow).
 
 [![Ouvrir dans Codeflow](https://developer.stackblitz.com/img/open_in_codeflow.svg)](https://pr.new/vitejs/vite)
 
 ## Configuration du dépôt
 
-Pour développer localement, forkez le dépôt Vite et clonez-le dans votre machine locale. Le dépôt Vite est un monorepo utilisant pnpm workspaces. Le gestionnaire de paquets utilisé pour installer et lier les dépendances doit être [pnpm](https://pnpm.io/).
+Pour développer en local, forkez le dépôt Vite et clonez-le sur votre machine locale. Le dépôt Vite est un monorepo utilisant pnpm workspaces. Le gestionnaire de paquets utilisé pour installer et lier les dépendances doit être [pnpm](https://pnpm.io/).
 
 Pour développer et tester le noyau `vite`:
 
-1. Lancez `pnpm i`dans le dossier racine de Vite.
+1. Executez `pnpm i`dans le dossier racine de Vite.
 
-2. Lancez `pnpm run build`dans le dossier racine de Vite.
+2. Executez `pnpm run build`dans le dossier racine de Vite.
 
 3. Si vous développez Vite, vous pouvez aller dans `packages/vite`et lancer `pnpm run dev`pour reconstruire Vite automatiquement chaque fois que vous changez son code.
 
@@ -35,7 +35,7 @@ git config --local blame.ignoreRevsFile .git-blame-ignore-revs
 
 Pour utiliser les points d’arrêt et explorer l’exécution du code, vous pouvez utiliser la fonctionnalité [« Run and Debug »](https://code.visualstudio.com/docs/editor/debugging) de VS Code.
 
-1. Ajoutez une instruction `debugger`là où vous voulez arrêter l’exécution du code.
+1. Ajoutez une instruction `debugger` à l'endroit où vous souhaitez arrêter l’exécution du code.
 
 2. Cliquez sur l’icône « Run and Debug » dans la barre d’activité de l’éditeur, qui ouvre la vue [_Run and Debug_](https://code.visualstudio.com/docs/editor/debugging#_run-and-debug-view).
 
@@ -47,7 +47,7 @@ Pour utiliser les points d’arrêt et explorer l’exécution du code, vous pou
 
 ### Débogage des erreurs dans les tests de Vitest en utilisant Playwright (Chromium)
 
-Certaines erreurs sont masquées et cachées en raison des couches de réabstraction et de la nature sandboxée ajoutée par Vitest, Playwright et Chromium. Afin de voir ce qui se passe réellement et le contenu de la console de devtools, suivez cette configuration :
+Certaines erreurs sont masquées et cachées en raison des couches d'abstraction et de la nature sandboxée ajoutée par Vitest, Playwright et Chromium. Afin de voir ce qui se passe réellement et le contenu de la console de devtools, suivez cette configuration :
 
 1. Ajoutez une instruction `debugger`dans le hook `afterAll`de`playground/vitestSetup.ts`. Cela mettra en pause l’exécution avant que les tests ne quittent et l’instance de navigateur Playwright ne quitte.
 
