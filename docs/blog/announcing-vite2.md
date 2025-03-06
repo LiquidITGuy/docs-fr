@@ -10,13 +10,13 @@ head:
       content: website
   - - meta
     - property: og:title
-      content: Annonce Vite 2.0
+      content: Annonce de Vite 2.0
   - - meta
     - property: og:url
       content: https://vite.dev/blog/announcing-vite2
   - - meta
     - property: og:description
-      content: Annonce de Vite 2 Release
+      content: Annonce de la sortie de Vite 2
 ---
 
 # Announcing Vite 2.0
