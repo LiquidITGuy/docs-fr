@@ -221,7 +221,7 @@ En partie, cette réduction a été possible en rendant certaines dépendances o
 
 ## Correction des bugs
 
-Un triage marathon a été lancé par [@bluwyoo](https://twitter.com/bluwyoo), [@sapphi_red](https://twitter.com/sapphi_red), qui ont rejoint l'équipe Vite récemment. Durant les trois derniers mois, les problèmes ouverts de Vite ont été réduits de 770 à 400. Et cette réduction a été atteinte alors que le nombre de PRs ouvertes était à son maximum. À la même époque, [@haoqunjiang](https://twitter.com/haoqunjiang) avait également élaboré une vue d'ensemble complète des problèmes de Vite : [Vue d'ensemble des problèmes de Vite](https://github.com/vitejs/vite/discussions/8232).
+Un triage marathon a été lancé par [@bluwyoo](https://twitter.com/bluwyoo), [@sapphi_red](https://twitter.com/sapphi_red), qui ont rejoint l'équipe Vite récemment. Durant les trois derniers mois, les tickets ouverts de Vite ont été réduits de 770 à 400. Et cette réduction a été atteinte alors que le nombre de PRs ouvertes était à son maximum. À la même époque, [@haoqunjiang](https://twitter.com/haoqunjiang) avait également élaboré une vue d'ensemble complète des tickets de Vite : [Vue d'ensemble des tickets de Vite](https://github.com/vitejs/vite/discussions/8232).
 
 [![Graphique des issues et PRs ouverts dans Vite](../images/v3-open-issues-and-PRs.png)](https://www.repotrends.com/vitejs/vite)
 
@@ -269,8 +269,8 @@ Nous voulons également remercier les individus et les entreprises qui soutienne
 
 ## Qu'en est-il de la prochaine version majeure ?
 
-Nous allons prendre les prochains mois pour nous assurer que la transition sera fluide pour tous les projets construits sur Vite. Donc, les premières majeures seront concentrées sur la continuation de nos efforts de triage avec un focus sur les nouveaux problèmes ouverts.
+Nous allons prendre les prochains mois pour nous assurer que la transition sera fluide pour tous les projets construits sur Vite. Donc, les premières majeures seront concentrées sur la continuation de nos efforts de triage avec un focus sur les nouveaux tickets ouverts.
 
 L'équipe Rollup [travaille sur sa prochaine majeure](https://twitter.com/lukastaegert/status/1544186847399743488), qui sera publiée dans les prochains mois. Une fois que l'écosystème des plugins Rollup aura le temps de mettre à jour, nous ferons suivre avec une nouvelle majeure de Vite. Cela nous donnera une autre opportunité de présenter des changements plus significatifs cette année, ce que nous pourrions prendre pour stabiliser certaines fonctionnalités expérimentales introduites dans cette version.
 
-Si vous êtes intéressé pour améliorer Vite, la meilleure façon de vous impliquer est de contribuer au triage des problèmes. Rejoignez [notre serveur Discord](https://chat.vite.dev) et cherchez le canal `#contributing`. Ou participez à nos `#docs`, `#help` d'autres, ou créez des plugins. Nous sommes juste au début. Il y a beaucoup d'idées ouvertes pour améliorer l'expérience de développement de Vite.
+Si vous êtes intéressé pour améliorer Vite, la meilleure façon de vous impliquer est de contribuer au triage des tickets. Rejoignez [notre serveur Discord](https://chat.vite.dev) et cherchez le canal `#contributing`. Ou participez à nos `#docs`, `#help` d'autres, ou créez des plugins. Nous sommes juste au début. Il y a beaucoup d'idées ouvertes pour améliorer l'expérience de développement de Vite.
