@@ -1,7 +1,7 @@
 ---
-title: Vite 6.0 is out!
+title: Vite 6.0 est sorti !
 author:
-  name: The Vite Team
+  name: L'équipe Vite
 date: 2024-11-26
 sidebar: false
 head:
@@ -10,7 +10,7 @@ head:
       content: website
   - - meta
     - property: og:title
-      content: Announcing Vite 6
+      content: Annonce de Vite 6
   - - meta
     - property: og:image
       content: https://vite.dev/og-image-announcing-vite6.png
@@ -19,97 +19,97 @@ head:
       content: https://vite.dev/blog/announcing-vite6
   - - meta
     - property: og:description
-      content: Vite 6 Release Announcement
+      content: Annonce de la sortie de Vite 6
   - - meta
     - name: twitter:card
       content: summary_large_image
 ---
 
-# Vite 6.0 is out!
+# Vite 6.0 est sorti !
 
-_November 26, 2024_
+_26 novembre 2024_
 
-![Vite 6 Announcement Cover Image](/og-image-announcing-vite6.png)
+![Image de couverture de l'annonce de Vite 6](/og-image-announcing-vite6.png)
 
-Today, we're taking another big step in Vite's story. The Vite [team](/team), [contributors](https://github.com/vitejs/vite/graphs/contributors), and ecosystem partners are excited to announce the release of Vite 6.
+Aujourd'hui, il s'agit d'un autre grand pas dans l'histoire de Vite. L'équipe [Vite](/team), les contributeurs et les partenaires de l'écosystème sont enthousiasmés d'annoncer la sortie de Vite 6.
 
-It has been an eventful year. Vite adoption keeps growing, with npm downloads per week jumping from 7.5 million to 17 million since the release of Vite 5 a year ago. [Vitest](https://vitest.dev) is not only being favored more by users but is also starting to form an ecosystem of its own. For example, [Storybook](https://storybook.js.org) has new testing capabilities powered by Vitest.
+Cette année a été pleine d'événements. L'adoption de Vite continue de croître, avec des téléchargements npm par semaine passant de 7,5 millions à 17 millions depuis la sortie de Vite 5 il y a un an. [Vitest](https://vitest.dev) n'est plus seulement privilégiée par les utilisateurs, mais commence également à former un écosystème propre. Par exemple, [Storybook](https://storybook.js.org) a de nouvelles capacités de test pilotées par Vitest.
 
-New frameworks have also joined the Vite ecosystem, including [TanStack Start](https://tanstack.com/start), [One](https://onestack.dev/), [Ember](https://emberjs.com/), and others. Web frameworks are innovating at an increasingly faster pace. You can check out the improvements folks have been doing at [Astro](https://astro.build/), [Nuxt](https://nuxt.com/), [SvelteKit](https://kit.svelte.dev/), [Solid Start](https://www.solidjs.com/blog/introducing-solidstart), [Qwik City](https://qwik.builder.io/qwikcity/overview/), [RedwoodJS](https://redwoodjs.com/), [React Router](https://reactrouter.com/), and the list goes on.
+De nouveaux frameworks ont également rejoint l'écosystème Vite, y compris [TanStack Start](https://tanstack.com/start), [One](https://onestack.dev/), [Ember](https://emberjs.com/), et d'autres. Les frameworks web innovent de plus en plus rapidement. Vous pouvez consulter les améliorations que les gens ont faites à [Astro](https://astro.build/), [Nuxt](https://nuxt.com/), [SvelteKit](https://kit.svelte.dev/), [Solid Start](https://www.solidjs.com/blog/introducing-solidstart), [Qwik City](https://qwik.builder.io/qwikcity/overview/), [RedwoodJS](https://redwoodjs.com/), [React Router](https://reactrouter.com/), et la liste continue.
 
-Vite is used by OpenAI, Google, Apple, Microsoft, NASA, Shopify, Cloudflare, GitLab, Reddit, Linear, among many others. Two months ago, we started a list of [companies using Vite](https://github.com/vitejs/companies-using-vite). We're happy to see many developers sending us a PR to add their companies to the list. It's hard to believe how much the ecosystem we built together has grown since Vite gave its first steps.
+Vite est utilisé par OpenAI, Google, Apple, Microsoft, NASA, Shopify, Cloudflare, GitLab, Reddit, Linear, et bien d'autres encore. Deux mois plus tard, nous avons commencé une liste d'[entreprises utilisant Vite](https://github.com/vitejs/companies-using-vite). Nous sommes heureux de voir beaucoup de développeurs nous envoyer une PR pour ajouter leurs entreprises à la liste. Il est difficile de croire à la quantité d'écosystème que nous avons construit ensemble depuis que Vite a pris ses premières étapes.
 
-![Vite weekly npm downloads](/vite6-npm-weekly-downloads.png)
+![Téléchargements npm par semaine de Vite](/vite6-npm-weekly-downloads.png)
 
-## Speeding up the Vite ecosystem
+## Accélérer l'écosystème de Vite
 
-Last month, the community gathered for the third edition of [ViteConf](https://viteconf.org/24/replay), hosted once more by [StackBlitz](https://stackblitz.com). It was the biggest Vite conference, with a broad representation of builders from the ecosystem. Among other announcements, Evan You announced [VoidZero](https://staging.voidzero.dev/posts/announcing-voidzero-inc), a company dedicated to building an open-source, high-performance, and unified development toolchain for the JavaScript ecosystem. VoidZero is behind [Rolldown](https://rolldown.rs) and [Oxc](https://oxc.rs), and their team is making significant strides, getting them rapidly ready for being adopted by Vite. Watch Evan's keynote to learn more about the next steps for Vite's rust-powered future.
+Le mois dernier, la communauté s'est réunie pour la troisième édition de la [ViteConf](https://viteconf.org/24/replay), hébergée une fois de plus par [StackBlitz](https://stackblitz.com). C'était la plus grande conférence Vite, avec une représentation étendue de constructeurs de l'écosystème. Parmi les autres annonces, Evan You a annoncé [VoidZero](https://staging.voidzero.dev/posts/announcing-voidzero-inc), une entreprise dédiée à la construction d'un outil de chaîne de développement open-source, haue-performance et unifié pour l'écosystème JavaScript. VoidZero est derrière [Rolldown](https://rolldown.rs) et [Oxc](https://oxc.rs), et leur équipe fait des progrès significatifs, les préparant rapidement pour être adoptés par Vite. Regardez la keynote d'Evan pour en savoir plus sur les étapes suivantes pour le futur de Vite, piloté par le rust.
 
 <YouTubeVideo videoId="EKvvptbTx6k?si=EZ-rFJn4pDW3tUvp" />
 
-[Stackblitz](https://stackblitz.com) unveiled [bolt.new](https://bolt.new), a Remix app that combines Claude and WebContainers and lets you prompt, edit, run, and deploy full-stack apps. Nate Weiner announced [One](https://onestack.dev/), a new Vite-powered React framework for web and native. Storybook showcased their latest Vitest-powered [testing features](https://youtu.be/8t5wxrFpCQY?si=PYZoWKf-45goQYDt). And so much more. We encourage you to watch [all 43 talks](https://www.youtube.com/playlist?list=PLqGQbXn_GDmnObDzgjUF4Krsfl6OUKxtp). The speakers made a significant effort to share with us what each project has been up to.
+[Stackblitz](https://stackblitz.com) a révélé [bolt.new](https://bolt.new), une application Remix qui combine Claude et WebContainers et vous permet de prompt, modifier, exécuter et déployer des applications full-stack. Nate Weiner a annoncé [One](https://onestack.dev/), un nouveau framework React Vite pour le web et natif. Storybook a présenté leurs dernières fonctionnalités de test pilotées par Vitest [testing features](https://youtu.be/8t5wxrFpCQY?si=PYZoWKf-45goQYDt). Et bien plus encore. Nous vous encourageons à regarder [les 43 conférences](https://www.youtube.com/playlist?list=PLqGQbXn_GDmnObDzgjUF4Krsfl6OUKxtp). Les conférenciers ont fait un effort significatif pour nous partager ce que chaque projet etait en train de faire.
 
-Vite also got a refreshed landing page and a clean domain. You should update your URLs to point to the new [vite.dev](https://vite.dev) domain moving forward. The new design and implementation was done by VoidZero, by the same folks that made their website. Shoutout to [Vicente Rodriguez](https://bento.me/rmoon) and [Simon Le Marchant](https://marchantweb.com/).
+Vite a également mis à jour sa page d'accueil et cleané son domaine. Vous devriez mettre à jour vos URL pour pointer vers le nouveau domaine [vite.dev](https://vite.dev). Le nouveau design et l'implémentation a été fait par VoidZero, par les mêmes personnes qui ont fait leur site web. Remerciement spéciaux à [Vicente Rodriguez](https://bento.me/rmoon) et [Simon Le Marchant](https://marchantweb.com/).
 
-## The next Vite major is here
+## La prochaine version majeure de Vite est arrivée
 
-Vite 6 is the most significant major release since Vite 2. We're eager to partner with the ecosystem to keep expanding our shared commons through new APIs and, as usual, a more polished base upon which to build.
+Vite 6 est la plus importante version majeure depuis Vite 2. Nous sommes impatients de collaborer avec l'écosystème pour maintenir et étendre nos assets partagés via de nouvelles APIs, et comme d'habitude, une base plus claire sur laquelle construire.
 
-Quick links:
+Liens rapides :
 
 - [Docs](/)
-- Translations: [简体中文](https://cn.vite.dev/), [日本語](https://ja.vite.dev/), [Español](https://es.vite.dev/), [Português](https://pt.vite.dev/), [한국어](https://ko.vite.dev/), [Deutsch](https://de.vite.dev/)
-- [Migration Guide](/guide/migration)
+- Traductions: [简体中文](https://cn.vite.dev/), [日本語](https://ja.vite.dev/), [Español](https://es.vite.dev/), [Português](https://pt.vite.dev/), [한국어](https://ko.vite.dev/), [Deutsch](https://de.vite.dev/)
+- [Guide de migration](/guide/migration)
 - [GitHub Changelog](https://github.com/vitejs/vite/blob/main/packages/vite/CHANGELOG.md#600-2024-11-26)
 
-If you're new to Vite, we suggest reading the [Getting Started](/guide/) and [Features](/guide/features) guides first.
+Si vous êtes nouveau sur Vite, nous vous suggérons de lire d'abord les guides [Débuter](/guide/) et [Fonctionnalités](/guide/features).
 
-We want to thank the more than [1K contributors to Vite Core](https://github.com/vitejs/vite/graphs/contributors) and the maintainers and contributors of Vite plugins, integrations, tools, and translations that have helped us craft this new major. We invite you to get involved and help us improve Vite for the whole ecosystem. Learn more at our [Contributing Guide](https://github.com/vitejs/vite/blob/main/CONTRIBUTING.md).
+Nous voulons remercier les plus de [1 000 contributeurs à Vite Core](https://github.com/vitejs/vite/graphs/contributors) et les mainteneurs et contributeurs de plugins, intégrations, outils, et traductions qui ont aidé à créer cette nouvelle version majeure. Nous vous invitons à participer et à nous aider à améliorer Vite pour l'écosystème entier. En savoir plus sur notre [Guide de contribution](https://github.com/vitejs/vite/blob/main/CONTRIBUTING.md).
 
-To get started, we suggest helping [triage issues](https://github.com/vitejs/vite/issues), [review PRs](https://github.com/vitejs/vite/pulls), send failing tests PRs based on open issues, and support others in [Discussions](https://github.com/vitejs/vite/discussions) and Vite Land's [help forum](https://discord.com/channels/804011606160703521/1019670660856942652). If you'd like to talk to us, join our [Discord community](http://chat.vite.dev/) and say hi on the [#contributing channel](https://discord.com/channels/804011606160703521/804439875226173480).
+Pour commencer, nous vous suggérons de [trier les tickets](https://github.com/vitejs/vite/issues), de [revoir les PR](https://github.com/vitejs/vite/pulls), de renvoyer des PR de tests en échec basés sur les tickets ouverts, et de soutenir les autres dans [Discussions](https://github.com/vitejs/vite/discussions) et le [forum d'aide de Vite Land](https://discord.com/channels/804011606160703521/1019670660856942652). Si vous souhaitez nous parler, rejoignez notre [communauté Discord](http://chat.vite.dev/) et dites-nous bonjour sur le canal [#contributing](https://discord.com/channels/804011606160703521/804439875226173480).
 
-For the latest news about the Vite ecosystem and Vite core, follow us on [Bluesky](https://bsky.app/profile/vite.dev), [X](https://twitter.com/vite_js), or [Mastodon](https://webtoo.ls/@vite).
+Pour les dernières nouvelles sur l'écosystème Vite et le noyau Vite, suivez-nous sur [Bluesky](https://bsky.app/profile/vite.dev), [X](https://twitter.com/vite_js), ou [Mastodon](https://webtoo.ls/@vite).
 
-## Getting started with Vite 6
+## Démarrer avec Vite 6
 
-You can use `pnpm create vite` to quickly scaffold a Vite app with your preferred framework or play online with Vite 6 using [vite.new](https://vite.new). You can also run `pnpm create vite-extra` to get access to templates from other frameworks and runtimes (Solid, Deno, SSR, and library starters). `create vite-extra` templates are also available when you run `create vite` under the `Others` option.
+Vous pouvez utiliser `pnpm create vite` pour créer rapidement une application Vite avec votre framework préféré ou jouer en ligne avec Vite 6 en utilisant [vite.new](https://vite.new). Vous pouvez également exécuter `pnpm create vite-extra` pour accéder aux templates de d'autres frameworks et runtimes (Solid, Deno, SSR, et bibliothèques de starters). `create vite-extra` templates sont également disponibles lorsque vous exécutez `create vite` sous l'option `Others`.
 
-The Vite starter templates are intended to be used as a playground to test Vite with different frameworks. When building your next project, you should reach out to the starter recommended by each framework. `create vite` also provides a shortcut to setup proper starters by some frameworks, like `create-vue`, `Nuxt 3`, `SvelteKit`, `Remix`, `Analog`, and `Angular`.
+Les templates de démarrage de Vite sont conçus pour être utilisés comme un terrain de jeu pour tester Vite avec différents frameworks. Lorsque vous construisez votre prochain projet, vous devriez vous tourner vers le démarrage recommandé par chaque framework. `create vite` fournit également un raccourci pour configurer des démarrages appropriés par certains frameworks, comme `create-vue`, `Nuxt 3`, `SvelteKit`, `Remix`, `Analog`, et `Angular`.
 
-## Node.js Support
+## Support de Node.js
 
-Vite 6 supports Node.js 18, 20, and 22+, similar to Vite 5. Node.js 21 support has been dropped. Vite drops Node.js support for older versions after their [EOL](https://endoflife.date/nodejs). The Node.js 18 EOL is at the end of April 2025, after which we may release a new major to bump the required Node.js version.
+Vite 6 supporte Node.js 18, 20, et 22+, comme Vite 5. Le support de Node.js 21 a été supprimé. Vite cesse le support de Node.js pour les versions plus anciennes après leur [EOL](https://endoflife.date/nodejs). Le EOL de Node.js 18 est le 30 avril 2025, après quoi nous pourrons publier une nouvelle version majeure pour augmenter la version de Node.js requise.
 
-## Experimental Environment API
+## API d'environnement expérimental
 
-Vite is getting more flexible with the new Environment API. These new APIs will allow framework authors to offer a dev experience closer to production and for the Ecosystem to share new building blocks. Nothing changes if you're building a SPA; when you use Vite with a single client environment, everything works as before. And even for custom SSR apps, Vite 6 is backward compatible. The primary target audience for Environment API is framework authors.
+Vite est devenu plus flexible avec la nouvelle API d'environnement. Ces nouvelles APIs permettront aux auteurs de frameworks d'offrir une expérience de développement plus proche de la production et pour l'écosystème partager de nouveaux blocs de construction. Rien ne change si vous construisez une SPA ; lorsque vous utilisez Vite avec un seul environnement client, tout fonctionne comme avant. Et même pour les applications SSR personnalisées, Vite 6 est compatible avec les versions précédentes. Le public principal pour l'API d'environnement est l'auteur de framework.
 
-For end users who are curious, [Sapphi](https://github.com/sapphi-red) wrote a great [Introduction to Environment API](https://green.sapphi.red/blog/increasing-vites-potential-with-the-environment-api) guide. It is a great place to start and understand why we're trying to make Vite even more flexible.
+Pour les utilisateurs finaux qui sont curieux, [Sapphi](https://github.com/sapphi-red) a écrit un guide [Introduction à l'API d'environnement](https://green.sapphi.red/blog/increasing-vites-potential-with-the-environment-api). C'est un excellent point de départ pour comprendre pourquoi nous essayons de rendre Vite encore plus flexible.
 
-If you are a framework author or Vite plugin maintainer and would like to leverage the new APIs, you can learn more at the [Environment API Guides](https://main.vite.dev/guide/api-environment).
+Si vous êtes un auteur de framework ou un mainteneur de plugin Vite et souhaitez tirer parti des nouvelles APIs, vous pouvez en savoir plus sur les [Guides API d'environnement](https://main.vite.dev/guide/api-environment).
 
-We want to thank everyone involved in defining and implementing the new APIs. The story begins with Vite 2 adopting the unbundled SSR dev scheme pioneered by [Rich Harris](https://github.com/Rich-Harris) and the [SvelteKit](https://svelte.dev/docs/kit) team. Vite's SSR transform then unlocked [Anthony Fu](https://github.com/antfu/) and [Pooya Parsa](https://github.com/pi0) to create vite-node and improve [Nuxt's Dev SSR story](https://antfu.me/posts/dev-ssr-on-nuxt). Anthony went to use vite-node to power [Vitest](https://vitest.dev), and [Vladimir Sheremet](https://github.com/sheremet-va) kept improving it as part of his work maintaining Vitest. At the beginning of 2023, Vladimir started working to upstream vite-node to Vite Core, and we released it as Runtime API in Vite 5.1 a year later. Feedback from ecosystem partners (special shout-out to the Cloudflare team) pushed us to do a more ambitious rework of Vite's environments. You can learn more about the story at [Patak's ViteConf 24 talk](https://www.youtube.com/watch?v=WImor3HDyqU?si=EZ-rFJn4pDW3tUvp).
+Nous voulons remercier toutes les personnes impliquées dans la définition et l'implémentation des nouvelles APIs. L'histoire commence avec Vite 2 qui adopte le schéma de développement SSR non lié initié par [Rich Harris](https://github.com/Rich-Harris) et l'équipe [SvelteKit](https://svelte.dev/docs/kit). Le transformateur SSR de Vite a ensuite amené [Anthony Fu](https://github.com/antfu/) et [Pooya Parsa](https://github.com/pi0) pour créer vite-node et améliorer l'histoire de SSR de développement [Nuxt](https://antfu.me/posts/dev-ssr-on-nuxt). Anthony a utilisé vite-node pour alimenter [Vitest](https://vitest.dev), et [Vladimir Sheremet](https://github.com/sheremet-va) a continué à l'améliorer dans le cadre de son travail de maintenance de Vitest. Au début de 2023, Vladimir a commencé à travailler pour monter vite-node vers le noyau de Vite, et nous l'avons publié comme API de runtime dans Vite 5.1 un an plus tard. Les retours de l'écosystème (un grand merci à l'équipe de Cloudflare) nous ont poussé à faire un re-travail plus ambitieux des environnements de Vite. Vous pouvez en savoir plus sur l'histoire à la [conférence de ViteConf 24 de Patak](https://www.youtube.com/watch?v=WImor3HDyqU?si=EZ-rFJn4pDW3tUvp).
 
-Everyone on the Vite team participated in defining the new API, which was co-designed with feedback from many projects in the Ecosystem. Thanks to everyone involved! We encourage you to get involved if you're building a framework, plugin, or tool on top of Vite. The new APIs are experimental. We will work with the Ecosystem to review how the new APIs will be used and stabilize them for the next major. If you'd like to ask questions or give feedback, there is an [open GitHub discussion here](https://github.com/vitejs/vite/discussions/16358).
+Chaque personne de l'équipe Vite a participé à la définition de la nouvelle API, qui a été co-conçue avec des retours  de nombreux projets de l'écosystème. Merci à toutes les personnes impliquées ! Nous vous encourgeons à participer si vous construisez un framework, un plugin ou un outil sur Vite. Les nouvelles APIs sont expérimentales. Nous travaillerons avec l'écosystème pour examiner comment les nouvelles APIs seront utilisées pour les stabiliser sur la prochaine version majeure. Si vous souhaitez poser des questions ou donner des retours, il y a un [discussion GitHub ouvert ici](https://github.com/vitejs/vite/discussions/16358).
 
-## Main Changes
+## Changements principaux
 
-- [Default value for `resolve.conditions`](/guide/migration#default-value-for-resolve-conditions)
+- [Valeur par défaut pour `resolve.conditions`](/guide/migration#default-value-for-resolve-conditions)
 - [JSON stringify](/guide/migration#json-stringify)
-- [Extended support of asset references in HTML elements](/guide/migration#extended-support-of-asset-references-in-html-elements)
+- [Support étendu des références d'assets dans les éléments HTML](/guide/migration#extended-support-of-asset-references-in-html-elements)
 - [postcss-load-config](/guide/migration#postcss-load-config)
-- [Sass now uses modern API by default](/guide/migration#sass-now-uses-modern-api-by-default)
-- [Customize CSS output file name in library mode](/guide/migration#customize-css-output-file-name-in-library-mode)
-- [And more changes that should only affect a few users](/guide/migration#advanced)
+- [Sass utilise maintenant l'API moderne par défaut](/guide/migration#sass-now-uses-modern-api-by-default)
+- [Personnalisation du nom de fichier de sortie CSS dans le mode bibliothèque](/guide/migration#customize-css-output-file-name-in-library-mode)
+- [Et plus de changements qui ne devraient affecter qu'un petit nombre d'utilisateurs](/guide/migration#advanced)
 
-There is also a new [Breaking Changes](/changes/) page that lists all planned, considering, and past changes in Vite.
+Il y a également une nouvelle page [Changements cassants](/changes/) qui liste tous les changements planifiés, considérés et passés dans Vite.
 
-## Migrating to Vite 6
+## Migration vers Vite 6
 
-For most projects, the update to Vite 6 should be straightforward, but we advise reviewing the [detailed Migration Guide](/guide/migration) before upgrading.
+Pour la plupart des projets, la mise à jour vers Vite 6 devrait être simple, mais nous vous conseillons de consulter le [guide de migration détaillé](/guide/migration) avant de mettre à jour.
 
-The complete list of changes is at the [Vite 6 Changelog](https://github.com/vitejs/vite/blob/main/packages/vite/CHANGELOG.md#500-2024-11-26).
+La liste complète des changements est à la page [Changelog de Vite 6](https://github.com/vitejs/vite/blob/main/packages/vite/CHANGELOG.md#500-2024-11-26).
 
-## Acknowledgments
+## Remerciements
 
-Vite 6 results from long work hours by our community of contributors, downstream maintainers, plugin authors, and the [Vite Team](/team). We appreciate the individuals and companies sponsoring Vite development. Vite is brought to you by [VoidZero](https://voidzero.dev), in partnership with [StackBlitz](https://stackblitz.com/), [Nuxt Labs](https://nuxtlabs.com/), and [Astro](https://astro.build). A shout-out to sponsors on [Vite's GitHub Sponsors](https://github.com/sponsors/vitejs) and [Vite's Open Collective](https://opencollective.com/vite).
+Vite 6 résulte de longues heures de travail par notre communauté de contributeurs, mainteneurs, auteurs de plugins, et l'équipe [Vite](/team). Nous apprécions les individus et les entreprises qui soutiennent le développement de Vite. Vite est porté par [VoidZero](https://voidzero.dev), en partenariat avec [StackBlitz](https://stackblitz.com/), [Nuxt Labs](https://nuxtlabs.com/), et [Astro](https://astro.build). Un grand merci aux sponsors sur [GitHub Sponsors de Vite](https://github.com/sponsors/vitejs) et [Open Collective de Vite](https://opencollective.com/vite).
