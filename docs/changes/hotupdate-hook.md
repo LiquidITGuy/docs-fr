@@ -1,20 +1,20 @@
-# HMR `hotUpdate` Plugin Hook
+# HMR (hot module reloading) `hotUpdate` Plugin Hook
 
-::: tip Feedback
-Give us feedback at [Environment API feedback discussion](https://github.com/vitejs/vite/discussions/16358)
+::: tip Retours
+Donnez-nous vos retours dans les [discussions GitHub](https://github.com/vitejs/vite/discussions/16358)
 :::
 
-We're planning to deprecate the `handleHotUpdate` plugin hook in favor of [`hotUpdate` hook](/guide/api-environment#the-hotupdate-hook) to be [Environment API](/guide/api-environment.md) aware, and handle additional watch events with `create` and `delete`.
+Nous prévoyons de déprécier le hook `handleHotUpdate` en faveur du nouveau hook [`hotUpdate`](/guide/api-environment#the-hotupdate-hook) pour être compatible avec l'[API Environnement](/guide/api-environment.md), et pour gérer les événements de surveillance supplémentaires avec `create` et `delete`.
 
-Affected scope: `Vite Plugin Authors`
+Portée affectée: `Auteurs de plugins Vite`
 
-::: warning Future Deprecation
-`hotUpdate` was first introduced in `v6.0`. The deprecation of `handleHotUpdate` is planned for `v7.0`. We don't yet recommend moving away from `handleHotUpdate` yet. If you want to experiment and give us feedback, you can use the `future.removePluginHookHandleHotUpdate` to `"warn"` in your vite config.
+::: warning Dépréciation future
+`hotUpdate` a été introduit dans `v6.0`. La dépréciation de `handleHotUpdate` est prévue pour `v7.0`. Nous ne recommandons pas encore de passer à `hotUpdate`. Si vous souhaitez expérimenter et donner vos retours, vous pouvez utiliser la configuration `future.removePluginHookHandleHotUpdate` pour `"warn"` dans votre configuration Vite.
 :::
 
 ## Motivation
 
-The [`handleHotUpdate` hook](/guide/api-plugin.md#handlehotupdate) allows to perform custom HMR update handling. A list of modules to be updated is passed in the `HmrContext`
+Le hook [`handleHotUpdate`](/guide/api-plugin.md#handlehotupdate) permet de gérer les mises à jour HMR personnalisées. Une liste de modules à mettre à jour est passée dans le contexte `HmrContext`
 
 ```ts
 interface HmrContext {
@@ -26,9 +26,9 @@ interface HmrContext {
 }
 ```
 
-This hook is called once for all environments, and the passed modules have mixed information from the Client and SSR environments only. Once frameworks move to custom environments, a new hook that is called for each of them is needed.
+Ce hook est appelé une fois pour tous les environnements, et les modules passés ont des informations mélangées provenant des environnements Client et SSR. Une fois que les frameworks passeront à des environnements personnalisés, un nouveau hook appelé pour chacun d'entre eux est nécessaire.
 
-The new `hotUpdate` hook works in the same way as `handleHotUpdate` but it is called for each environment and receives a new `HotUpdateOptions` instance:
+Le nouveau hook `hotUpdate` fonctionne de la même manière que `handleHotUpdate` mais il est appelé pour chaque environnement et reçoit une nouvelle instance `HotUpdateOptions`:
 
 ```ts
 interface HotUpdateOptions {
@@ -41,13 +41,13 @@ interface HotUpdateOptions {
 }
 ```
 
-The current dev environment can be accessed like in other Plugin hooks with `this.environment`. The `modules` list will now be module nodes from the current environment only. Each environment update can define different update strategies.
+L'environnement de développement actuel peut être accédé comme dans les autres hooks de plugin avec `this.environment`. La liste `modules` ne contiendra maintenant que les modules de l'environnement actuel. Chaque environnement peut définir des stratégies de mise à jour différentes.
 
-This hook is also now called for additional watch events and not only for `'update'`. Use `type` to differentiate between them.
+Ce hook est maintenant appelé pour les événements de surveillance supplémentaires et non seulement pour `'update'`. Utilisez `type` pour les différencier.
 
-## Migration Guide
+## Guide de migration
 
-Filter and narrow down the affected module list so that the HMR is more accurate.
+Filtrez et réduisez la liste des modules affectés pour que le HMR soit plus précis.
 
 ```js
 handleHotUpdate({ modules }) {
@@ -61,7 +61,7 @@ hotUpdate({ modules }) {
 }
 ```
 
-Return an empty array and perform a full reload:
+Retourner un tableau vide et effectuer un rechargement complet:
 
 ```js
 handleHotUpdate({ server, modules, timestamp }) {
@@ -97,7 +97,7 @@ hotUpdate({ modules, timestamp }) {
 }
 ```
 
-Return an empty array and perform complete custom HMR handling by sending custom events to the client:
+Retourner un tableau vide et effectuer un traitement HMR personnalisé complet en envoyant des événements personnalisés au client:
 
 ```js
 handleHotUpdate({ server }) {
@@ -109,7 +109,7 @@ handleHotUpdate({ server }) {
   return []
 }
 
-// Migrate to...
+// Migrer vers...
 
 hotUpdate() {
   this.environment.hot.send({
