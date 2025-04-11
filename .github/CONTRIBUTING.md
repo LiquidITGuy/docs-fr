@@ -1,55 +1,55 @@
-# Docs Translation Contributing Guide
+# Guide de contribution à la traduction de la documentation
 
-This repo is a template for [Vite.js docs translation repositories](https://github.com/vitejs?q=docs).
+Ce dépôt est un modèle pour les [dépôts de traduction de la documentation Vite.js](https://github.com/vitejs?q=docs).
 
-## Creating a Translation Repo
+## Création d'un dépôt de traduction
 
-1. Click [*Use this template*](https://github.com/tony19/vite-docs-template/generate) to scaffold a new translation repo in your personal GitHub.
+1. Cliquez sur [*Utiliser ce modèle*](https://github.com/tony19/vite-docs-template/generate) pour créer un nouveau dépôt de traduction dans votre compte GitHub personnel.
 
-2. Configure workflow permissions (required):
+2. Configurez les permissions de workflow (requis) :
 
-   - Go to your repository's "Settings" > "Actions" > "General" > "Workflow permissions"
-   - Select "Read and write permissions"
-   - Click "Save"
+   - Allez dans les "Paramètres" > "Actions" > "Général" > "Permissions des workflows" de votre dépôt
+   - Sélectionnez "Permissions de lecture et d'écriture"
+   - Cliquez sur "Enregistrer"
 
-   This is a standard requirement for any GitHub Actions that need to create issues or make repository changes. Without these permissions, the action will fail with a `403 "Resource not accessible by integration"` error when trying to create issues or manage labels.
+   Il s'agit d'une exigence standard pour toutes les Actions GitHub qui doivent créer des issues ou apporter des modifications au dépôt. Sans ces permissions, l'action échouera avec une erreur `403 "Resource not accessible by integration"` lors de la création d'issues ou de la gestion des labels.
 
-3. This repo uses the [`yuki-no` GitHub Action](https://github.com/Gumball12/yuki-no) to keep it in sync with changes from [Vite's `docs`](https://github.com/vitejs/vite/tree/main/docs). It creates issues in this repo to track upstream changes that need to be translated.
+3. Ce dépôt utilise l'[Action GitHub `yuki-no`](https://github.com/Gumball12/yuki-no) pour le maintenir synchronisé avec les changements de la [documentation de Vite](https://github.com/vitejs/vite/tree/main/docs). Elle crée des issues dans ce dépôt pour suivre les modifications en amont qui doivent être traduites.
 
-   You must configure the following field in [`/.github/workflows/yuki-no.yml`](/.github/workflows/yuki-no.yml):
+   Vous devez configurer le champ suivant dans [`/.github/workflows/yuki-no.yml`](/.github/workflows/yuki-no.yml) :
 
-    * `track-from`: Set this to a recent commit hash from the head repository (vitejs/vite). This is the starting point for tracking changes - Yuki-no will only track commits after this hash. Using an old commit hash will significantly slow down the initial action run as it needs to process each historical commit. (After the first successful run, Yuki-no automatically skips previously processed commits.)
+    * `track-from` : définissez-le sur un hash de commit récent du dépôt principal (vitejs/vite). C'est le point de départ pour suivre les changements - Yuki-no ne suivra que les commits après ce hash. L'utilisation d'un ancien hash de commit ralentira considérablement l'exécution initiale de l'action, car elle devra traiter chaque commit historique. (Après la première exécution réussie, Yuki-no ignore automatiquement les commits déjà traités.)
 
-   By default, `yuki-no` uses the `github-actions` bot. If you want to use a custom bot:
+   Par défaut, `yuki-no` utilise le bot `github-actions`. Si vous souhaitez utiliser un bot personnalisé :
 
-    * `username` - the GitHub username of a [machine user](https://docs.github.com/en/developers/overview/managing-deploy-keys#machine-users) (e.g., `ci-bot`)
-    * `email` - the email associated with the GitHub username above
-    * `access-token` - a [personal access token](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token) of the machine user (stored in a [repository secret](https://docs.github.com/en/actions/security-guides/encrypted-secrets#creating-encrypted-secrets-for-a-repository), enabling `access-token: ${{ secrets.MY_SECRET_TOKEN }}`)
+    * `username` - le nom d'utilisateur GitHub d'un [utilisateur machine](https://docs.github.com/en/developers/overview/managing-deploy-keys#machine-users) (par exemple, `ci-bot`)
+    * `email` - l'e-mail associé au nom d'utilisateur GitHub ci-dessus
+    * `access-token` - un [jeton d'accès personnel](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token) de l'utilisateur machine (stocké dans un [secret de dépôt](https://docs.github.com/en/actions/security-guides/encrypted-secrets#creating-encrypted-secrets-for-a-repository), permettant `access-token: ${{ secrets.MY_SECRET_TOKEN }}`)
 
-   For more configuration options, see the [`yuki-no` documentation](https://github.com/Gumball12/yuki-no).
+   Pour plus d'options de configuration, consultez la [documentation de `yuki-no`](https://github.com/Gumball12/yuki-no).
 
-4. Translate all user-visible strings (unless specified otherwise) in the following files to the target language:
+4. Traduisez toutes les chaînes visibles par l'utilisateur (sauf indication contraire) dans les fichiers suivants vers la langue cible :
 
-    * [`/docs/.vitepress/config.ts`](/docs/.vitepress/config.ts) (the `og*`, `footer.*`, `text`, and `link` fields)
+    * [`/docs/.vitepress/config.ts`](/docs/.vitepress/config.ts) (les champs `og*`, `footer.*`, `text` et `link`)
     * [`/docs/.vitepress/theme/components/HomeSponsors.vue`](/docs/.vitepress/theme/components/HomeSponsors.vue)
-    * [`/docs/.vitepress/theme/composables/sponsor.ts`](https://github.com/tony19/vite-docs-template/blob/acea14e/docs/.vitepress/theme/composables/sponsor.ts#L44) (the `tier` fields)
-    * [`/docs/_data/team.js`](/docs/_data/team.js) (the `title` and `desc` fields)
+    * [`/docs/.vitepress/theme/composables/sponsor.ts`](https://github.com/tony19/vite-docs-template/blob/acea14e/docs/.vitepress/theme/composables/sponsor.ts#L44) (les champs `tier`)
+    * [`/docs/_data/team.js`](/docs/_data/team.js) (les champs `title` et `desc`)
     * `/docs/**/*.md`
     * [`/CONTRIBUTING.md`](/CONTRIBUTING.md)
     * [`/README.md`](/README.md)
     * `/docs/images/*.svg`
 
-   💡 *Tips:*
+   💡 *Tips :*
 
-    * *Ping the [`#docs` channel](https://discord.com/channels/804011606160703521/855049073157341234) in [Discord](https://chat.vitejs.dev) or [GitHub Discussions](https://github.com/vitejs/vite/discussions/categories/general) for others who can help with translations.*
-    * *Submit pull requests in your repo for this work so that collaborators can proofread the translations.*
+    * *Contactez le [canal `#docs`](https://discord.com/channels/804011606160703521/855049073157341234) sur [Discord](https://chat.vitejs.dev) ou les [Discussions GitHub](https://github.com/vitejs/vite/discussions/categories/general) pour trouver d'autres personnes qui peuvent aider aux traductions.*
+    * *Soumettez des pull requests dans votre dépôt pour ce travail afin que les collaborateurs puissent relire les traductions.*
 
-5. Create a [pull request in Vite's main repo](https://github.com/vitejs/vite/pulls) to update the [locale links in `docs/.vitepress/config.ts`](https://github.com/vitejs/vite/blob/1e078ad1902ae980741d6920fc3a72d182fcf179/docs/.vitepress/config.ts#L55-L62), which would add the new language to the dropdown on the Vite homepage. Specifically, append to `localeLinks.items[]` an object with these keys:
+5. Créez une [pull request dans le dépôt principal de Vite](https://github.com/vitejs/vite/pulls) pour mettre à jour les [liens de localisation dans `docs/.vitepress/config.ts`](https://github.com/vitejs/vite/blob/1e078ad1902ae980741d6920fc3a72d182fcf179/docs/.vitepress/config.ts#L55-L62), ce qui ajouterait la nouvelle langue au menu déroulant sur la page d'accueil de Vite. Plus précisément, ajoutez à `localeLinks.items[]` un objet avec ces clés :
 
-    - `text` - the language name in its native spelling (e.g., `Español`)
-    - `link` - the URL to the target site, composed of the language's [ISO 639-1 code](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) as a subdomain of `https://vitejs.dev` (e.g., `https://es.vitejs.dev`)
+    - `text` - le nom de la langue dans son orthographe native (par exemple, `Español`)
+    - `link` - l'URL du site cible, composée du [code ISO 639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) de la langue comme sous-domaine de `https://vitejs.dev` (par exemple, `https://es.vitejs.dev`)
 
-    *Example for French:*
+    *Exemple pour le français :*
 
     ```js
     localeLinks: {
@@ -59,6 +59,6 @@ This repo is a template for [Vite.js docs translation repositories](https://gith
     },
     ```
 
-6. In the pull request's description, include the URL to your translation repo. Be prepared to [transfer the repo](https://docs.github.com/en/repositories/creating-and-managing-repositories/transferring-a-repository) to the [`vitejs` organization](https://github.com/vitejs) upon request by the [Vite team](https://github.com/orgs/vitejs/people). The transfer automatically adds you as a collaborator on the repo. The repo will be renamed to `docs-LANGUAGE_CODE` (e.g., `docs-fr`) after the transfer.
+6. Dans la description de la pull request, incluez l'URL de votre dépôt de traduction. Soyez prêt à [transférer le dépôt](https://docs.github.com/en/repositories/creating-and-managing-repositories/transferring-a-repository) à l'[organisation `vitejs`](https://github.com/vitejs) à la demande de l'[équipe Vite](https://github.com/orgs/vitejs/people). Le transfert vous ajoute automatiquement en tant que collaborateur sur le dépôt. Le dépôt sera renommé en `docs-CODE_DE_LANGUE` (par exemple, `docs-fr`) après le transfert.
 
-   **Thank you for your contribution!** ❤️
+   **Merci pour votre contribution !** ❤️
