@@ -1,12 +1,12 @@
-# Command Line Interface
+# Interface en ligne de commande
 
-## Dev server
+## Serveur de développement
 
 ### `vite`
 
-Start Vite dev server in the current directory. `vite dev` and `vite serve` are aliases for `vite`.
+Démarrer le serveur de développement Vite dans le répertoire courant. `vite dev` et `vite serve` sont des alias pour `vite`.
 
-#### Usage
+#### Utilisation
 
 ```bash
 vite [root]
@@ -14,33 +14,33 @@ vite [root]
 
 #### Options
 
-| Options                   |                                                                                                                                                                                      |
-| ------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `--host [host]`           | Specify hostname (`string`)                                                                                                                                                          |
-| `--port <port>`           | Specify port (`number`)                                                                                                                                                              |
-| `--open [path]`           | Open browser on startup (`boolean \| string`)                                                                                                                                        |
-| `--cors`                  | Enable CORS (`boolean`)                                                                                                                                                              |
-| `--strictPort`            | Exit if specified port is already in use (`boolean`)                                                                                                                                 |
-| `--force`                 | Force the optimizer to ignore the cache and re-bundle (`boolean`)                                                                                                                    |
-| `-c, --config <file>`     | Use specified config file (`string`)                                                                                                                                                 |
-| `--base <path>`           | Public base path (default: `/`) (`string`)                                                                                                                                           |
-| `-l, --logLevel <level>`  | info \| warn \| error \| silent (`string`)                                                                                                                                           |
-| `--clearScreen`           | Allow/disable clear screen when logging (`boolean`)                                                                                                                                  |
-| `--configLoader <loader>` | Use `bundle` to bundle the config with esbuild, or `runner` (experimental) to process it on the fly, or `native` (experimental) to load using the native runtime (default: `bundle`) |
-| `--profile`               | Start built-in Node.js inspector (check [Performance bottlenecks](/guide/troubleshooting#performance-bottlenecks))                                                                   |
-| `-d, --debug [feat]`      | Show debug logs (`string \| boolean`)                                                                                                                                                |
-| `-f, --filter <filter>`   | Filter debug logs (`string`)                                                                                                                                                         |
-| `-m, --mode <mode>`       | Set env mode (`string`)                                                                                                                                                              |
-| `-h, --help`              | Display available CLI options                                                                                                                                                        |
-| `-v, --version`           | Display version number                                                                                                                                                               |
+| Options                   |                                                                                                                                                                                                     |
+| ------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `--host [host]`           | Spécifier le nom d'hôte (`string`)                                                                                                                                                                  |
+| `--port <port>`           | Spécifier le port (`number`)                                                                                                                                                                        |
+| `--open [path]`           | Ouvrir le navigateur au démarrage (`boolean \| string`)                                                                                                                                             |
+| `--cors`                  | Activer CORS (`boolean`)                                                                                                                                                                            |
+| `--strictPort`            | Quitter si le port spécifié est déjà utilisé (`boolean`)                                                                                                                                            |
+| `--force`                 | Forcer l'optimiseur à ignorer le cache et refaire le regroupement (`boolean`)                                                                                                                       |
+| `-c, --config <file>`     | Utiliser le fichier de configuration spécifié (`string`)                                                                                                                                            |
+| `--base <path>`           | Chemin de base public (par défaut : `/`) (`string`)                                                                                                                                                 |
+| `-l, --logLevel <level>`  | info \| warn \| error \| silent (`string`)                                                                                                                                                          |
+| `--clearScreen`           | Autoriser/désactiver l'effacement de l'écran lors de la journalisation (`boolean`)                                                                                                                  |
+| `--configLoader <loader>` | Utiliser `bundle` pour regrouper la configuration avec esbuild, ou `runner` (expérimental) pour la traiter à la volée, ou `native` (expérimental) pour la charger en utilisant le runtime natif (par défaut : `bundle`) |
+| `--profile`               | Démarrer l'inspecteur Node.js intégré (vérifier [Goulets d'étranglement de performance](/guide/troubleshooting#performance-bottlenecks))                                                            |
+| `-d, --debug [feat]`      | Afficher les logs de débogage (`string \| boolean`)                                                                                                                                                 |
+| `-f, --filter <filter>`   | Filtrer les logs de débogage (`string`)                                                                                                                                                             |
+| `-m, --mode <mode>`       | Définir le mode d'environnement (`string`)                                                                                                                                                          |
+| `-h, --help`              | Afficher les options CLI disponibles                                                                                                                                                                |
+| `-v, --version`           | Afficher le numéro de version                                                                                                                                                                       |
 
 ## Build
 
 ### `vite build`
 
-Build for production.
+Build pour la production.
 
-#### Usage
+#### Utilisation
 
 ```bash
 vite build [root]
@@ -48,40 +48,40 @@ vite build [root]
 
 #### Options
 
-| Options                        |                                                                                                                        |
-| ------------------------------ | ---------------------------------------------------------------------------------------------------------------------- |
-| `--target <target>`            | Transpile target (default: `"modules"`) (`string`)                                                                     |
-| `--outDir <dir>`               | Output directory (default: `dist`) (`string`)                                                                          |
-| `--assetsDir <dir>`            | Directory under outDir to place assets in (default: `"assets"`) (`string`)                                             |
-| `--assetsInlineLimit <number>` | Static asset base64 inline threshold in bytes (default: `4096`) (`number`)                                             |
-| `--ssr [entry]`                | Build specified entry for server-side rendering (`string`)                                                             |
-| `--sourcemap [output]`         | Output source maps for build (default: `false`) (`boolean \| "inline" \| "hidden"`)                                    |
-| `--minify [minifier]`          | Enable/disable minification, or specify minifier to use (default: `"esbuild"`) (`boolean \| "terser" \| "esbuild"`)    |
-| `--manifest [name]`            | Emit build manifest json (`boolean \| string`)                                                                         |
-| `--ssrManifest [name]`         | Emit ssr manifest json (`boolean \| string`)                                                                           |
-| `--emptyOutDir`                | Force empty outDir when it's outside of root (`boolean`)                                                               |
-| `-w, --watch`                  | Rebuilds when modules have changed on disk (`boolean`)                                                                 |
-| `-c, --config <file>`          | Use specified config file (`string`)                                                                                   |
-| `--base <path>`                | Public base path (default: `/`) (`string`)                                                                             |
-| `-l, --logLevel <level>`       | Info \| warn \| error \| silent (`string`)                                                                             |
-| `--clearScreen`                | Allow/disable clear screen when logging (`boolean`)                                                                    |
-| `--configLoader <loader>`      | Use `bundle` to bundle the config with esbuild or `runner` (experimental) to process it on the fly (default: `bundle`) |
-| `--profile`                    | Start built-in Node.js inspector (check [Performance bottlenecks](/guide/troubleshooting#performance-bottlenecks))     |
-| `-d, --debug [feat]`           | Show debug logs (`string \| boolean`)                                                                                  |
-| `-f, --filter <filter>`        | Filter debug logs (`string`)                                                                                           |
-| `-m, --mode <mode>`            | Set env mode (`string`)                                                                                                |
-| `-h, --help`                   | Display available CLI options                                                                                          |
-| `--app`                        | Build all environments, same as `builder: {}` (`boolean`, experimental)                                                |
+| Options                        |                                                                                                                                                 |
+| ------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------- |
+| `--target <target>`            | Cible de transpilation (par défaut : `"modules"`) (`string`)                                                                                    |
+| `--outDir <dir>`               | Répertoire de sortie (par défaut : `dist`) (`string`)                                                                                           |
+| `--assetsDir <dir>`            | Répertoire sous outDir pour placer les assets (par défaut : `"assets"`) (`string`)                                                              |
+| `--assetsInlineLimit <number>` | Seuil d'intégration en base64 des assets statiques en octets (par défaut : `4096`) (`number`)                                                   |
+| `--ssr [entry]`                | Compiler l'entrée spécifiée pour le rendu côté serveur (`string`)                                                                               |
+| `--sourcemap [output]`         | Générer des source maps pour la build (par défaut : `false`) (`boolean \| "inline" \| "hidden"`)                                                |
+| `--minify [minifier]`          | Activer/désactiver la minification, ou spécifier le minifieur à utiliser (par défaut : `"esbuild"`) (`boolean \| "terser" \| "esbuild"`)        |
+| `--manifest [name]`            | Émettre un manifeste de build en json (`boolean \| string`)                                                                                     |
+| `--ssrManifest [name]`         | Émettre un manifeste ssr en json (`boolean \| string`)                                                                                          |
+| `--emptyOutDir`                | Forcer le vidage de outDir quand il est en dehors de root (`boolean`)                                                                           |
+| `-w, --watch`                  | Recompiler lorsque les modules ont changé sur le disque (`boolean`)                                                                             |
+| `-c, --config <file>`          | Utiliser le fichier de configuration spécifié (`string`)                                                                                        |
+| `--base <path>`                | Chemin de base public (par défaut : `/`) (`string`)                                                                                             |
+| `-l, --logLevel <level>`       | Info \| warn \| error \| silent (`string`)                                                                                                      |
+| `--clearScreen`                | Autoriser/désactiver l'effacement de l'écran lors de la journalisation (`boolean`)                                                              |
+| `--configLoader <loader>`      | Utiliser `bundle` pour regrouper la configuration avec esbuild ou `runner` (expérimental) pour la traiter à la volée (par défaut : `bundle`)    |
+| `--profile`                    | Démarrer l'inspecteur Node.js intégré (vérifier [Goulets d'étranglement de performance](/guide/troubleshooting#performance-bottlenecks))        |
+| `-d, --debug [feat]`           | Afficher les logs de débogage (`string \| boolean`)                                                                                             |
+| `-f, --filter <filter>`        | Filtrer les logs de débogage (`string`)                                                                                                         |
+| `-m, --mode <mode>`            | Définir le mode d'environnement (`string`)                                                                                                      |
+| `-h, --help`                   | Afficher les options CLI disponibles                                                                                                            |
+| `--app`                        | Compiler tous les environnements, équivalent à `builder: {}` (`boolean`, expérimental)                                                         |
 
-## Others
+## Autres
 
 ### `vite optimize`
 
-Pre-bundle dependencies.
+Pré-regrouper les dépendances.
 
-**Deprecated**: the pre-bundle process runs automatically and does not need to be called.
+**Déprécié** : le processus de pré-regroupement s'exécute automatiquement et n'a pas besoin d'être appelé.
 
-#### Usage
+#### Utilisation
 
 ```bash
 vite optimize [root]
@@ -89,24 +89,24 @@ vite optimize [root]
 
 #### Options
 
-| Options                   |                                                                                                                        |
-| ------------------------- | ---------------------------------------------------------------------------------------------------------------------- |
-| `--force`                 | Force the optimizer to ignore the cache and re-bundle (`boolean`)                                                      |
-| `-c, --config <file>`     | Use specified config file (`string`)                                                                                   |
-| `--base <path>`           | Public base path (default: `/`) (`string`)                                                                             |
-| `-l, --logLevel <level>`  | Info \| warn \| error \| silent (`string`)                                                                             |
-| `--clearScreen`           | Allow/disable clear screen when logging (`boolean`)                                                                    |
-| `--configLoader <loader>` | Use `bundle` to bundle the config with esbuild or `runner` (experimental) to process it on the fly (default: `bundle`) |
-| `-d, --debug [feat]`      | Show debug logs (`string \| boolean`)                                                                                  |
-| `-f, --filter <filter>`   | Filter debug logs (`string`)                                                                                           |
-| `-m, --mode <mode>`       | Set env mode (`string`)                                                                                                |
-| `-h, --help`              | Display available CLI options                                                                                          |
+| Options                   |                                                                                                                                              |
+| ------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------- |
+| `--force`                 | Forcer l'optimiseur à ignorer le cache et refaire le regroupement (`boolean`)                                                                |
+| `-c, --config <file>`     | Utiliser le fichier de configuration spécifié (`string`)                                                                                     |
+| `--base <path>`           | Chemin de base public (par défaut : `/`) (`string`)                                                                                          |
+| `-l, --logLevel <level>`  | Info \| warn \| error \| silent (`string`)                                                                                                   |
+| `--clearScreen`           | Autoriser/désactiver l'effacement de l'écran lors de la journalisation (`boolean`)                                                           |
+| `--configLoader <loader>` | Utiliser `bundle` pour regrouper la configuration avec esbuild ou `runner` (expérimental) pour la traiter à la volée (par défaut : `bundle`) |
+| `-d, --debug [feat]`      | Afficher les logs de débogage (`string \| boolean`)                                                                                          |
+| `-f, --filter <filter>`   | Filtrer les logs de débogage (`string`)                                                                                                      |
+| `-m, --mode <mode>`       | Définir le mode d'environnement (`string`)                                                                                                   |
+| `-h, --help`              | Afficher les options CLI disponibles                                                                                                         |
 
 ### `vite preview`
 
-Locally preview the production build. Do not use this as a production server as it's not designed for it.
+Prévisualiser localement la build de production. Ne pas utiliser ceci comme serveur de production car il n'est pas conçu pour cela.
 
-#### Usage
+#### Utilisation
 
 ```bash
 vite preview [root]
@@ -114,19 +114,19 @@ vite preview [root]
 
 #### Options
 
-| Options                   |                                                                                                                        |
-| ------------------------- | ---------------------------------------------------------------------------------------------------------------------- |
-| `--host [host]`           | Specify hostname (`string`)                                                                                            |
-| `--port <port>`           | Specify port (`number`)                                                                                                |
-| `--strictPort`            | Exit if specified port is already in use (`boolean`)                                                                   |
-| `--open [path]`           | Open browser on startup (`boolean \| string`)                                                                          |
-| `--outDir <dir>`          | Output directory (default: `dist`)(`string`)                                                                           |
-| `-c, --config <file>`     | Use specified config file (`string`)                                                                                   |
-| `--base <path>`           | Public base path (default: `/`) (`string`)                                                                             |
-| `-l, --logLevel <level>`  | Info \| warn \| error \| silent (`string`)                                                                             |
-| `--clearScreen`           | Allow/disable clear screen when logging (`boolean`)                                                                    |
-| `--configLoader <loader>` | Use `bundle` to bundle the config with esbuild or `runner` (experimental) to process it on the fly (default: `bundle`) |
-| `-d, --debug [feat]`      | Show debug logs (`string \| boolean`)                                                                                  |
-| `-f, --filter <filter>`   | Filter debug logs (`string`)                                                                                           |
-| `-m, --mode <mode>`       | Set env mode (`string`)                                                                                                |
-| `-h, --help`              | Display available CLI options                                                                                          |
+| Options                   |                                                                                                                                              |
+| ------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------- |
+| `--host [host]`           | Spécifier le nom d'hôte (`string`)                                                                                                           |
+| `--port <port>`           | Spécifier le port (`number`)                                                                                                                 |
+| `--strictPort`            | Quitter si le port spécifié est déjà utilisé (`boolean`)                                                                                     |
+| `--open [path]`           | Ouvrir le navigateur au démarrage (`boolean \| string`)                                                                                      |
+| `--outDir <dir>`          | Répertoire de sortie (par défaut : `dist`)(`string`)                                                                                         |
+| `-c, --config <file>`     | Utiliser le fichier de configuration spécifié (`string`)                                                                                     |
+| `--base <path>`           | Chemin de base public (par défaut : `/`) (`string`)                                                                                          |
+| `-l, --logLevel <level>`  | Info \| warn \| error \| silent (`string`)                                                                                                   |
+| `--clearScreen`           | Autoriser/désactiver l'effacement de l'écran lors de la journalisation (`boolean`)                                                           |
+| `--configLoader <loader>` | Utiliser `bundle` pour regrouper la configuration avec esbuild ou `runner` (expérimental) pour la traiter à la volée (par défaut : `bundle`) |
+| `-d, --debug [feat]`      | Afficher les logs de débogage (`string \| boolean`)                                                                                          |
+| `-f, --filter <filter>`   | Filtrer les logs de débogage (`string`)                                                                                                      |
+| `-m, --mode <mode>`       | Définir le mode d'environnement (`string`)                                                                                                   |
+| `-h, --help`              | Afficher les options CLI disponibles                                                                                                         |
