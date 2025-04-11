@@ -14,7 +14,7 @@ Le serveur de développement de Vite met en cache de manière persistante les d�
 
 ## Auditez les plugins Vite configurés
 
-Les plugins internes et officiels de Vite sont optimisés pour effectuer le minimum de travail possible tout en assurant la compatibilité avec l'écosystème plus large. Par exemple, les transformations de code utilisent des regex en développement, mais effectuent une analyse complète lors de la build pour garantir l'exactitude.
+Les plugins internes et officiels de Vite sont optimisés pour effectuer le minimum de travail possible tout en assurant la compatibilité avec l'écosystème plus large. Par exemple, les transformations de code utilisent des regex en développement, mais effectuent une analyse complète lors de le build pour garantir l'exactitude.
 
 Cependant, la performance des plugins communautaires échappe au contrôle de Vite, ce qui peut affecter l'expérience du développeur. Voici quelques points à surveiller lors de l'utilisation de plugins Vite supplémentaires :
 
@@ -116,7 +116,7 @@ Exemples de réduction du travail :
 
 - Utilisez CSS au lieu de Sass/Less/Stylus lorsque c'est possible (l'imbrication peut être gérée par PostCSS)
 - Ne transformez pas les SVG en composants de framework UI (React, Vue, etc). Importez-les plutôt comme des chaînes ou des URL.
-- Lors de l'utilisation de `@vitejs/plugin-react`, évitez de configurer les options Babel, afin qu'il ignore la transformation pendant la build (seul esbuild sera utilisé).
+- Lors de l'utilisation de `@vitejs/plugin-react`, évitez de configurer les options Babel, afin qu'il ignore la transformation pendant le build (seul esbuild sera utilisé).
 
 Exemples d'utilisation d'outils natifs :
 

@@ -55,7 +55,7 @@ vite build [root]
 | `--assetsDir <dir>`            | Répertoire sous outDir pour placer les assets (par défaut : `"assets"`) (`string`)                                                              |
 | `--assetsInlineLimit <number>` | Seuil d'intégration en base64 des assets statiques en octets (par défaut : `4096`) (`number`)                                                   |
 | `--ssr [entry]`                | Compiler l'entrée spécifiée pour le rendu côté serveur (`string`)                                                                               |
-| `--sourcemap [output]`         | Générer des source maps pour la build (par défaut : `false`) (`boolean \| "inline" \| "hidden"`)                                                |
+| `--sourcemap [output]`         | Générer des source maps pour le build (par défaut : `false`) (`boolean \| "inline" \| "hidden"`)                                                |
 | `--minify [minifier]`          | Activer/désactiver la minification, ou spécifier le minifieur à utiliser (par défaut : `"esbuild"`) (`boolean \| "terser" \| "esbuild"`)        |
 | `--manifest [name]`            | Émettre un manifeste de build en json (`boolean \| string`)                                                                                     |
 | `--ssrManifest [name]`         | Émettre un manifeste ssr en json (`boolean \| string`)                                                                                          |
@@ -104,7 +104,7 @@ vite optimize [root]
 
 ### `vite preview`
 
-Prévisualiser localement la build de production. Ne pas utiliser ceci comme serveur de production car il n'est pas conçu pour cela.
+Prévisualiser localement le build de production. Ne pas utiliser ceci comme serveur de production car il n'est pas conçu pour cela.
 
 #### Utilisation
 

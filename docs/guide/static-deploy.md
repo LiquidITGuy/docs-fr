@@ -1,8 +1,8 @@
 # Déploiement d'un site statique
 
-Les guides suivants sont basés sur quelques hypothèses communes :
+Les guides suivants partent d'hypothèses communes :
 
-- Vous utilisez l'emplacement de sortie de build par défaut (`dist`). Cet emplacement [peut être modifié en utilisant `build.outDir`](/config/build-options.md#build-outdir), et vous pouvez extrapoler les instructions de ces guides dans ce cas.
+- Vous utilisez l'emplacement de destination de build par défaut (`dist`). Cet emplacement [peut être modifié en utilisant `build.outDir`](/config/build-options.md#build-outdir), et vous pouvez extrapoler les instructions de ces guides dans ce cas.
 - Vous utilisez npm. Vous pouvez utiliser des commandes équivalentes pour exécuter les scripts si vous utilisez Yarn ou d'autres gestionnaires de paquets.
 - Vite est installé en tant que dépendance de développement locale dans votre projet, et vous avez configuré les scripts npm suivants :
 
@@ -15,7 +15,7 @@ Les guides suivants sont basés sur quelques hypothèses communes :
 }
 ```
 
-Il est important de noter que `vite preview` est destiné à prévisualiser la build localement et n'est pas conçu pour être un serveur de production.
+Il est important de noter que `vite preview` est destiné à prévisualiser le build localement et n'est pas conçu pour être un serveur de production.
 
 ::: tip REMARQUE
 Ces guides fournissent des instructions pour effectuer un déploiement statique de votre site Vite. Vite prend également en charge le Server Side Rendering (SSR). Le SSR fait référence aux frameworks frontend qui permettent d'exécuter la même application dans Node.js, de la pré-rendre en HTML, puis de l'hydrater côté client. Consultez le [Guide SSR](./ssr) pour en savoir plus sur cette fonctionnalité. D'autre part, si vous recherchez une intégration avec des frameworks serveur traditionnels, consultez plutôt le [guide d'intégration backend](./backend-integration).
@@ -39,7 +39,7 @@ Une fois que vous avez construit l'application, vous pouvez la tester localement
 $ npm run preview
 ```
 
-La commande `vite preview` lancera un serveur web statique local qui sert les fichiers de `dist` à l'adresse `http://localhost:4173`. C'est un moyen simple de vérifier si la build de production semble correcte dans votre environnement local.
+La commande `vite preview` lancera un serveur web statique local qui sert les fichiers de `dist` à l'adresse `http://localhost:4173`. C'est un moyen simple de vérifier si le build de production semble correct dans votre environnement local.
 
 Vous pouvez configurer le port du serveur en passant l'argument `--port`.
 
@@ -51,17 +51,17 @@ Vous pouvez configurer le port du serveur en passant l'argument `--port`.
 }
 ```
 
-Maintenant, la commande `preview` lancera le serveur à l'adresse `http://localhost:8080`.
+Dorénavant, la commande `preview` lancera le serveur à l'adresse `http://localhost:8080`.
 
 ## GitHub Pages
 
 1. Définissez correctement `base` dans `vite.config.js`.
 
-   Si vous déployez vers `https://<USERNAME>.github.io/`, ou vers un domaine personnalisé via GitHub Pages (par exemple `www.example.com`), définissez `base` à `'/'`. Alternativement, vous pouvez supprimer `base` de la configuration, car sa valeur par défaut est `'/'`.
+   Si vous déployez vers `https://<USERNAME>.github.io/`, ou vers un domaine personnalisé via GitHub Pages (par exemple `www.example.com`), définissez `base` à `'/'`. Comme alternative, vous pouvez supprimer `base` de la configuration, car sa valeur par défaut est `'/'`.
 
    Si vous déployez vers `https://<USERNAME>.github.io/<REPO>/` (par exemple, votre dépôt est à `https://github.com/<USERNAME>/<REPO>`), alors définissez `base` à `'/<REPO>/'`.
 
-2. Accédez à la configuration de GitHub Pages dans la page des paramètres du dépôt et choisissez "GitHub Actions" comme source de déploiement. Cela vous amènera à créer un workflow qui construit et déploie votre projet. Un exemple de workflow qui installe les dépendances et construit en utilisant npm est fourni :
+2. Accédez à la configuration de GitHub Pages dans la page des paramètres du dépôt et choisissez "GitHub Actions" comme source de déploiement. Cela vous amènera à créer un workflow qui va construire et déployer votre projet. Un exemple de workflow qui installe les dépendances et build en utilisant npm est fourni :
 
    <<< ./static-deploy-github-pages.yaml#content
 
