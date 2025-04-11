@@ -1,28 +1,28 @@
-# Why Vite
+# Pourquoi Vite
 
-## The Problems
+## Les problèmes
 
-Before ES modules were available in browsers, developers had no native mechanism for authoring JavaScript in a modularized fashion. This is why we are all familiar with the concept of "bundling": using tools that crawl, process and concatenate our source modules into files that can run in the browser.
+Avant que les modules ES ne soient disponibles dans les navigateurs, les développeurs n'avaient aucun mécanisme natif pour écrire du JavaScript de manière modulaire. C'est pourquoi nous sommes tous familiers avec le concept de "bundling" : l'utilisation d'outils qui parcourent, traitent et concatènent nos modules source en fichiers pouvant s'exécuter dans le navigateur.
 
-Over time we have seen tools like [webpack](https://webpack.js.org/), [Rollup](https://rollupjs.org) and [Parcel](https://parceljs.org/), which greatly improved the development experience for frontend developers.
+Au fil du temps, nous avons vu apparaître des outils comme [webpack](https://webpack.js.org/), [Rollup](https://rollupjs.org) et [Parcel](https://parceljs.org/), qui ont considérablement amélioré l'expérience de développement pour les développeurs frontend.
 
-However, as we build more and more ambitious applications, the amount of JavaScript we are dealing with is also increasing dramatically. It is not uncommon for large scale projects to contain thousands of modules. We are starting to hit a performance bottleneck for JavaScript based tooling: it can often take an unreasonably long wait (sometimes up to minutes!) to spin up a dev server, and even with Hot Module Replacement (HMR), file edits can take a couple of seconds to be reflected in the browser. The slow feedback loop can greatly affect developers' productivity and happiness.
+Cependant, à mesure que nous construisons des applications de plus en plus ambitieuses, la quantité de JavaScript à traiter augmente également de façon spectaculaire. Il n'est pas rare que des projets à grande échelle contiennent des milliers de modules. Nous commençons à atteindre un goulet d'étranglement de performance pour les outils basés sur JavaScript : il peut souvent falloir un temps d'attente déraisonnablement long (parfois jusqu'à plusieurs minutes !) pour démarrer un serveur de développement, et même avec le remplacement de module à chaud (HMR), les modifications de fichiers peuvent prendre quelques secondes avant d'être répercutées dans le navigateur. Cette boucle de retour lente peut grandement affecter la productivité et la satisfaction des développeurs.
 
-Vite aims to address these issues by leveraging new advancements in the ecosystem: the availability of native ES modules in the browser, and the rise of JavaScript tools written in compile-to-native languages.
+Vite vise à résoudre ces problèmes en tirant parti des nouvelles avancées dans l'écosystème : la disponibilité des modules ES natifs dans le navigateur et l'essor des outils JavaScript écrits dans des langages compilés en code natif.
 
-### Slow Server Start
+### Démarrage lent du serveur
 
-When cold-starting the dev server, a bundler-based build setup has to eagerly crawl and build your entire application before it can be served.
+Lors du démarrage à froid du serveur de développement, une configuration de build basée sur un bundler doit parcourir et construire toute votre application avant qu'elle ne puisse être servie.
 
-Vite improves the dev server start time by first dividing the modules in an application into two categories: **dependencies** and **source code**.
+Vite améliore le temps de démarrage du serveur de développement en divisant d'abord les modules d'une application en deux catégories : **dépendances** et **code source**.
 
-- **Dependencies** are mostly plain JavaScript that do not change often during development. Some large dependencies (e.g. component libraries with hundreds of modules) are also quite expensive to process. Dependencies may also be shipped in various module formats (e.g. ESM or CommonJS).
+- Les **dépendances** sont principalement du JavaScript simple qui ne change pas souvent pendant le développement. Certaines dépendances volumineuses (par exemple, des bibliothèques de composants avec des centaines de modules) sont également assez coûteuses à traiter. Les dépendances peuvent également être livrées dans différents formats de modules (par exemple, ESM ou CommonJS).
 
-  Vite [pre-bundles dependencies](./dep-pre-bundling.md) using [esbuild](https://esbuild.github.io/). esbuild is written in Go and pre-bundles dependencies 10-100x faster than JavaScript-based bundlers.
+  Vite [pré-bundle les dépendances](./dep-pre-bundling.md) en utilisant [esbuild](https://esbuild.github.io/). esbuild est écrit en Go et pré-bundle les dépendances 10 à 100 fois plus rapidement que les bundlers basés sur JavaScript.
 
-- **Source code** often contains non-plain JavaScript that needs transforming (e.g. JSX, CSS or Vue/Svelte components), and will be edited very often. Also, not all source code needs to be loaded at the same time (e.g. with route-based code-splitting).
+- Le **code source** contient souvent du JavaScript non standard qui nécessite une transformation (par exemple, JSX, CSS ou composants Vue/Svelte), et sera modifié très fréquemment. De plus, tout le code source n'a pas besoin d'être chargé en même temps (par exemple, avec la séparation du code basée sur les routes).
 
-  Vite serves source code over [native ESM](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules). This is essentially letting the browser take over part of the job of a bundler: Vite only needs to transform and serve source code on demand, as the browser requests it. Code behind conditional dynamic imports is only processed if actually used on the current screen.
+  Vite sert le code source via [ESM natif](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules). C'est essentiellement pour laisser le navigateur prendre en charge une partie du travail d'un bundler : Vite n'a besoin de transformer et de servir le code source qu'à la demande, lorsque le navigateur le demande. Le code derrière les importations dynamiques conditionnelles n'est traité que s'il est effectivement utilisé sur l'écran actuel.
 
 <script setup>
 import bundlerSvg from '../images/bundler.svg?raw'
@@ -31,36 +31,36 @@ import esmSvg from '../images/esm.svg?raw'
 <svg-image :svg="bundlerSvg" />
 <svg-image :svg="esmSvg" />
 
-### Slow Updates
+### Mises à jour lentes
 
-When a file is edited in a bundler-based build setup, it is inefficient to rebuild the whole bundle for an obvious reason: the update speed will degrade linearly with the size of the app.
+Lorsqu'un fichier est modifié dans une configuration de build basée sur un bundler, il est inefficace de reconstruire l'ensemble du bundle pour une raison évidente : la vitesse de mise à jour se dégrade linéairement avec la taille de l'application.
 
-In some bundlers, the dev server runs the bundling in memory so that it only needs to invalidate part of its module graph when a file changes, but it still needs to re-construct the entire bundle and reload the web page. Reconstructing the bundle can be expensive, and reloading the page blows away the current state of the application. This is why some bundlers support Hot Module Replacement (HMR): allowing a module to "hot replace" itself without affecting the rest of the page. This greatly improves DX - however, in practice we've found that even HMR update speed deteriorates significantly as the size of the application grows.
+Dans certains bundlers, le serveur de développement exécute le bundling en mémoire afin de n'avoir à invalider qu'une partie de son graphe de modules lorsqu'un fichier change, mais il doit toujours reconstruire l'ensemble du bundle et recharger la page web. La reconstruction du bundle peut être coûteuse, et le rechargement de la page fait disparaître l'état actuel de l'application. C'est pourquoi certains bundlers prennent en charge le remplacement de module à chaud (HMR) : permettant à un module de se "remplacer à chaud" sans affecter le reste de la page. Cela améliore considérablement l'expérience de développement - cependant, en pratique, nous avons constaté que même la vitesse de mise à jour HMR se détériore significativement à mesure que la taille de l'application augmente.
 
-In Vite, HMR is performed over native ESM. When a file is edited, Vite only needs to precisely invalidate the chain between the edited module and its closest HMR boundary (most of the time only the module itself), making HMR updates consistently fast regardless of the size of your application.
+Dans Vite, le HMR est effectué via ESM natif. Lorsqu'un fichier est modifié, Vite n'a besoin d'invalider avec précision que la chaîne entre le module modifié et sa limite HMR la plus proche (la plupart du temps, uniquement le module lui-même), rendant les mises à jour HMR constamment rapides quelle que soit la taille de votre application.
 
-Vite also leverages HTTP headers to speed up full page reloads (again, let the browser do more work for us): source code module requests are made conditional via `304 Not Modified`, and dependency module requests are strongly cached via `Cache-Control: max-age=31536000,immutable` so they don't hit the server again once cached.
+Vite exploite également les en-têtes HTTP pour accélérer les rechargements complets de pages (là encore, laissons le navigateur faire plus de travail pour nous) : les requêtes de modules de code source sont conditionnelles via `304 Not Modified`, et les requêtes de modules de dépendances sont fortement mises en cache via `Cache-Control: max-age=31536000,immutable` afin qu'elles ne touchent plus le serveur une fois mises en cache.
 
-Once you experience how fast Vite is, we highly doubt you'd be willing to put up with bundled development again.
+Une fois que vous aurez expérimenté la rapidité de Vite, nous doutons fortement que vous acceptiez de revenir au développement avec bundling.
 
-## Why Bundle for Production
+## Pourquoi Bundler pour la production
 
-Even though native ESM is now widely supported, shipping unbundled ESM in production is still inefficient (even with HTTP/2) due to the additional network round trips caused by nested imports. To get the optimal loading performance in production, it is still better to bundle your code with tree-shaking, lazy-loading and common chunk splitting (for better caching).
+Même si l'ESM natif est maintenant largement pris en charge, la livraison d'ESM non regroupé en production reste inefficace (même avec HTTP/2) en raison des allers-retours réseau supplémentaires causés par les importations imbriquées. Pour obtenir des performances de chargement optimales en production, il est toujours préférable de regrouper votre code avec l'élimination de code mort (tree-shaking), le lazy loading et le chunk splitting (pour un meilleur cache).
 
-Ensuring optimal output and behavioral consistency between the dev server and the production build isn't easy. This is why Vite ships with a pre-configured [build command](./build.md) that bakes in many [performance optimizations](./features.md#build-optimizations) out of the box.
+Assurer une sortie optimale et une cohérence comportementale entre le serveur de développement et le build de production n'est pas facile. C'est pourquoi Vite est livré avec une [commande de build](./build.md) préconfigurée qui intègre de nombreuses [optimisations de performance](./features.md#build-optimizations) dès le départ.
 
-## Why Not Bundle with esbuild?
+## Pourquoi ne pas regrouper avec esbuild ?
 
-While Vite leverages esbuild to [pre-bundle some dependencies in dev](./dep-pre-bundling.md), Vite does not use esbuild as a bundler for production builds.
+Bien que Vite utilise esbuild pour [préregrouper certaines dépendances en développement](./dep-pre-bundling.md), Vite n'utilise pas esbuild comme bundler pour les builds de production.
 
-Vite's current plugin API isn't compatible with using `esbuild` as a bundler. In spite of `esbuild` being faster, Vite's adoption of Rollup's flexible plugin API and infrastructure heavily contributed to its success in the ecosystem. For the time being, we believe that Rollup offers a better performance-vs-flexibility tradeoff.
+L'API de plugin actuelle de Vite n'est pas compatible avec l'utilisation d'`esbuild` comme bundler. Malgré la rapidité d'`esbuild`, l'adoption par Vite de l'API de plugin flexible et de l'infrastructure de Rollup a fortement contribué à son succès dans l'écosystème. Pour le moment, nous croyons que Rollup offre un meilleur compromis performance-flexibilité.
 
-Rollup has also been working on performance improvements, [switching its parser to SWC in v4](https://github.com/rollup/rollup/pull/5073). And there is an ongoing effort to build a Rust-port of Rollup called Rolldown. Once Rolldown is ready, it could replace both Rollup and esbuild in Vite, improving build performance significantly and removing inconsistencies between development and build. You can watch [Evan You's ViteConf 2023 keynote for more details](https://youtu.be/hrdwQHoAp0M).
+Rollup a également travaillé sur des améliorations de performances, [passant son parseur à SWC dans la v4](https://github.com/rollup/rollup/pull/5073). Et il y a un effort en cours pour construire une version Rust de Rollup appelée Rolldown. Une fois Rolldown prêt, il pourrait remplacer à la fois Rollup et esbuild dans Vite, améliorant significativement les performances de build et éliminant les incohérences entre le développement et le build. Vous pouvez regarder [le discours d'Evan You à la ViteConf 2023 pour plus de détails](https://youtu.be/hrdwQHoAp0M).
 
-## How Vite Relates to Other Unbundled Build Tools?
+## Comment Vite se rapporte-t-il aux autres outils de build sans bundle ?
 
-[WMR](https://github.com/preactjs/wmr) by the Preact team looked to provide a similar feature set. Vite's universal Rollup plugin API for dev and build was inspired by it. WMR is no longer maintained. The Preact team now recommends Vite with [@preactjs/preset-vite](https://github.com/preactjs/preset-vite).
+[WMR](https://github.com/preactjs/wmr) de l'équipe Preact visait à offrir un ensemble de fonctionnalités similaires. L'API de plugin Rollup universelle de Vite pour le développement et le build a été inspirée par celle-ci. WMR n'est plus maintenu. L'équipe Preact recommande maintenant Vite avec [@preactjs/preset-vite](https://github.com/preactjs/preset-vite).
 
-[Snowpack](https://www.snowpack.dev/) was also a no-bundle native ESM dev server, very similar in scope to Vite. Vite's dependency pre-bundling is also inspired by Snowpack v1 (now [`esinstall`](https://github.com/snowpackjs/snowpack/tree/main/esinstall)). Snowpack is no longer being maintained. The Snowpack team is now working on [Astro](https://astro.build/), a static site builder powered by Vite.
+[Snowpack](https://www.snowpack.dev/) était également un serveur de développement ESM natif sans bundle, très similaire à Vite dans ses fonctionnalités. Le préregroupement des dépendances de Vite est également inspiré de Snowpack v1 (maintenant [`esinstall`](https://github.com/snowpackjs/snowpack/tree/main/esinstall)). Snowpack n'est plus maintenu. L'équipe Snowpack travaille maintenant sur [Astro](https://astro.build/), un constructeur de site statique alimenté par Vite.
 
-[@web/dev-server](https://modern-web.dev/docs/dev-server/overview/) (previously `es-dev-server`) is a great project and Vite 1.0's Koa-based server setup was inspired by it. The `@web` umbrella project is actively maintained and contains many other excellent tools that may benefit Vite users as well.
+[@web/dev-server](https://modern-web.dev/docs/dev-server/overview/) (anciennement `es-dev-server`) est un excellent projet et la configuration du serveur basé sur Koa de Vite 1.0 a été inspirée par celui-ci. Le projet parapluie `@web` est activement maintenu et contient de nombreux autres excellents outils qui peuvent également bénéficier aux utilisateurs de Vite.
