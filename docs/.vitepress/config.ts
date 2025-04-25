@@ -137,7 +137,7 @@ export default defineConfig({
     ko: { label: '한국어', link: 'https://ko.vite.dev' },
     de: { label: 'Deutsch', link: 'https://de.vite.dev' },
     fr: { label: 'Français', link: 'https://fr.vite.dev' },
-
+  },
   themeConfig: {
     logo: '/logo.svg',
 
