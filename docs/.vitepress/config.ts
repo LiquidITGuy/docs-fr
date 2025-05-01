@@ -9,7 +9,7 @@ import llmstxt from 'vitepress-plugin-llms'
 import type { PluginOption } from 'vite'
 import { buildEnd } from './buildEnd.config'
 
-const ogDescription = 'Next Generation Frontend Tooling'
+const ogDescription = 'outil Frontend de nouvelle génération'
 const ogImage = 'https://vite.dev/og-image.jpg'
 const ogTitle = 'Vite'
 const ogUrl = 'https://vite.dev'
@@ -41,19 +41,19 @@ const additionalTitle = ((): string => {
 const versionLinks = ((): DefaultTheme.NavItemWithLink[] => {
   const oldVersions: DefaultTheme.NavItemWithLink[] = [
     {
-      text: 'Vite 5 Docs',
+      text: 'Doc Vite 5',
       link: 'https://v5.vite.dev',
     },
     {
-      text: 'Vite 4 Docs',
+      text: 'Doc Vite 4',
       link: 'https://v4.vite.dev',
     },
     {
-      text: 'Vite 3 Docs',
+      text: 'Doc Vite 3',
       link: 'https://v3.vite.dev',
     },
     {
-      text: 'Vite 2 Docs',
+      text: 'Doc Vite 2',
       link: 'https://v2.vite.dev',
     },
   ]
@@ -63,7 +63,7 @@ const versionLinks = ((): DefaultTheme.NavItemWithLink[] => {
     case 'local':
       return [
         {
-          text: 'Vite 6 Docs (release)',
+          text: 'Doc Vite 6 (release)',
           link: 'https://vite.dev',
         },
         ...oldVersions,
@@ -136,14 +136,14 @@ export default defineConfig({
     pt: { label: 'Português', link: 'https://pt.vite.dev' },
     ko: { label: '한국어', link: 'https://ko.vite.dev' },
     de: { label: 'Deutsch', link: 'https://de.vite.dev' },
+    fr: { label: 'Français', link: 'https://fr.vite.dev' },
   },
-
   themeConfig: {
     logo: '/logo.svg',
 
     editLink: {
       pattern: 'https://github.com/vitejs/vite/edit/main/docs/:path',
-      text: 'Suggest changes to this page',
+      text: 'Suggestions pour cette page',
     },
 
     socialLinks: [
@@ -159,7 +159,7 @@ export default defineConfig({
       apiKey: '208bb9c14574939326032b937431014b',
       indexName: 'vitejs',
       searchParameters: {
-        facetFilters: ['tags:en'],
+        facetFilters: ['tags:fr'],
       },
     },
 
@@ -169,7 +169,7 @@ export default defineConfig({
     },
 
     footer: {
-      message: `Released under the MIT License. (${commitRef})`,
+      message: `Publié sous la licence MIT. (${commitRef})`,
       copyright: 'Copyright © 2019-present VoidZero Inc. & Vite Contributors',
     },
 
@@ -178,9 +178,9 @@ export default defineConfig({
       { text: 'Config', link: '/config/', activeMatch: '/config/' },
       { text: 'Plugins', link: '/plugins/', activeMatch: '/plugins/' },
       {
-        text: 'Resources',
+        text: 'Ressources',
         items: [
-          { text: 'Team', link: '/team' },
+          { text: 'Équipe', link: '/team' },
           { text: 'Blog', link: '/blog' },
           { text: 'Releases', link: '/releases' },
           {
@@ -218,7 +218,7 @@ export default defineConfig({
                 link: 'https://github.com/vitejs/vite/blob/main/packages/vite/CHANGELOG.md',
               },
               {
-                text: 'Contributing',
+                text: 'Contribuer',
                 link: 'https://github.com/vitejs/vite/blob/main/CONTRIBUTING.md',
               },
             ],
@@ -237,15 +237,15 @@ export default defineConfig({
           text: 'Introduction',
           items: [
             {
-              text: 'Getting Started',
+              text: 'Commencer',
               link: '/guide/',
             },
             {
-              text: 'Philosophy',
+              text: 'Philosophie',
               link: '/guide/philosophy',
             },
             {
-              text: 'Why Vite',
+              text: 'Pourquoi Vite',
               link: '/guide/why',
             },
           ],
@@ -254,7 +254,7 @@ export default defineConfig({
           text: 'Guide',
           items: [
             {
-              text: 'Features',
+              text: 'Fonctionnalités',
               link: '/guide/features',
             },
             {
@@ -262,39 +262,39 @@ export default defineConfig({
               link: '/guide/cli',
             },
             {
-              text: 'Using Plugins',
+              text: 'Utiliser les plugins',
               link: '/guide/using-plugins',
             },
             {
-              text: 'Dependency Pre-Bundling',
+              text: 'Pré-bundling des dépendances',
               link: '/guide/dep-pre-bundling',
             },
             {
-              text: 'Static Asset Handling',
+              text: 'Gestion des ressources statiques',
               link: '/guide/assets',
             },
             {
-              text: 'Building for Production',
+              text: 'Construction pour la production',
               link: '/guide/build',
             },
             {
-              text: 'Deploying a Static Site',
+              text: 'Déployer un site statique',
               link: '/guide/static-deploy',
             },
             {
-              text: 'Env Variables and Modes',
+              text: 'Variables d‘environnement et modes',
               link: '/guide/env-and-mode',
             },
             {
-              text: 'Server-Side Rendering (SSR)',
+              text: 'Rendu côté serveur (SSR)',
               link: '/guide/ssr',
             },
             {
-              text: 'Backend Integration',
+              text: 'Intégration avec le backend',
               link: '/guide/backend-integration',
             },
             {
-              text: 'Troubleshooting',
+              text: 'Résolution des problèmes',
               link: '/guide/troubleshooting',
             },
             {
@@ -306,11 +306,11 @@ export default defineConfig({
               link: '/guide/rolldown',
             },
             {
-              text: 'Migration from v5',
+              text: 'Migration depuis v5',
               link: '/guide/migration',
             },
             {
-              text: 'Breaking Changes',
+              text: 'Changements cassants',
               link: '/changes/',
             },
           ],
@@ -319,32 +319,32 @@ export default defineConfig({
           text: 'APIs',
           items: [
             {
-              text: 'Plugin API',
+              text: 'API des plugins',
               link: '/guide/api-plugin',
             },
             {
-              text: 'HMR API',
+              text: 'API HMR',
               link: '/guide/api-hmr',
             },
             {
-              text: 'JavaScript API',
+              text: 'API JavaScript',
               link: '/guide/api-javascript',
             },
             {
-              text: 'Config Reference',
+              text: 'Référence de configuration',
               link: '/config/',
             },
           ],
         },
         {
-          text: 'Environment API',
+          text: 'API d‘environnement',
           items: [
             {
               text: 'Introduction',
               link: '/guide/api-environment',
             },
             {
-              text: 'Environment Instances',
+              text: 'Instances d‘environnement',
               link: '/guide/api-environment-instances',
             },
             {
@@ -356,7 +356,7 @@ export default defineConfig({
               link: '/guide/api-environment-frameworks',
             },
             {
-              text: 'Runtimes',
+              text: 'Runtime',
               link: '/guide/api-environment-runtimes',
             },
           ],
@@ -367,35 +367,35 @@ export default defineConfig({
           text: 'Config',
           items: [
             {
-              text: 'Configuring Vite',
+              text: 'Configurer Vite',
               link: '/config/',
             },
             {
-              text: 'Shared Options',
+              text: 'Options partagées',
               link: '/config/shared-options',
             },
             {
-              text: 'Server Options',
+              text: 'Options serveur',
               link: '/config/server-options',
             },
             {
-              text: 'Build Options',
+              text: 'Options de build',
               link: '/config/build-options',
             },
             {
-              text: 'Preview Options',
+              text: 'Options de prévisualisation',
               link: '/config/preview-options',
             },
             {
-              text: 'Dep Optimization Options',
+              text: 'Options d‘optimisation de dépendances',
               link: '/config/dep-optimization-options',
             },
             {
-              text: 'SSR Options',
+              text: 'Options SSR',
               link: '/config/ssr-options',
             },
             {
-              text: 'Worker Options',
+              text: 'Options worker',
               link: '/config/worker-options',
             },
           ],
@@ -403,40 +403,40 @@ export default defineConfig({
       ],
       '/changes/': [
         {
-          text: 'Breaking Changes',
+          text: 'Changements cassants',
           link: '/changes/',
         },
         {
-          text: 'Current',
+          text: 'Actuels',
           items: [],
         },
         {
-          text: 'Future',
+          text: 'Futurs',
           items: [
             {
-              text: 'this.environment in Hooks',
+              text: 'this.environment dans les hooks',
               link: '/changes/this-environment-in-hooks',
             },
             {
-              text: 'HMR hotUpdate Plugin Hook',
+              text: 'HMR hook hotUpdate Plugin',
               link: '/changes/hotupdate-hook',
             },
             {
-              text: 'Move to per-environment APIs',
+              text: 'Passer à des APIs par environnement',
               link: '/changes/per-environment-apis',
             },
             {
-              text: 'SSR using ModuleRunner API',
+              text: 'SSR avec ModuleRunner API',
               link: '/changes/ssr-using-modulerunner',
             },
             {
-              text: 'Shared plugins during build',
+              text: 'Plugins partagés lors du build',
               link: '/changes/shared-plugins-during-build',
             },
           ],
         },
         {
-          text: 'Past',
+          text: 'Passés',
           items: [],
         },
       ],

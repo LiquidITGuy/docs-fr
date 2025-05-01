@@ -1,21 +1,21 @@
-# SSR using `ModuleRunner` API
+# SSR avec l'API `ModuleRunner`
 
-::: tip Feedback
-Give us feedback at [Environment API feedback discussion](https://github.com/vitejs/vite/discussions/16358)
+::: tip Retours
+Donnez-nous vos retours dans les [discussions GitHub](https://github.com/vitejs/vite/discussions/16358)
 :::
 
-`server.ssrLoadModule` has been replaced by importing from a [Module Runner](/guide/api-environment#modulerunner).
+`server.ssrLoadModule` a été remplacé par l'importation depuis un [Module Runner](/guide/api-environment#modulerunner).
 
-Affect scope: `Vite Plugin Authors`
+Scopes affectés: `Auteurs de plugins Vite`
 
-::: warning Future Deprecation
-`ModuleRunner` was first introduce in `v6.0`. The deprecation of `server.ssrLoadModule` is planned for a future major. To identify your usage, set `future.removeSsrLoadModule` to `"warn"` in your vite config.
+::: warning Dépréciation future
+`ModuleRunner` a été introduit dans `v6.0`. La dépréciation de `server.ssrLoadModule` est prévue pour une future version majeure. Pour identifier votre utilisation, définissez `future.removeSsrLoadModule` sur `"warn"` dans votre configuration Vite.
 :::
 
 ## Motivation
 
-The `server.ssrLoadModule(url)` only allows importing modules in the `ssr` environment and can only execute the modules in the same process as the Vite dev server. For apps with custom environments, each is associated with a `ModuleRunner` that may be running in a separate thread or process. To import modules, we now have `moduleRunner.import(url)`.
+La `server.ssrLoadModule(url)` ne permet que d'importer des modules dans l'environnement `ssr` et ne peut exécuter les modules que dans le même processus que le serveur de développement Vite. Pour les applications avec des environnements personnalisés, chaque environnement est associé à un `ModuleRunner` qui peut être en cours d'exécution dans un thread ou un processus distinct. Pour importer des modules, nous avons maintenant `moduleRunner.import(url)`.
 
-## Migration Guide
+## Guide de migration
 
-Check out the [Environment API for Frameworks Guide](../guide/api-environment-frameworks.md).
+Consultez le [Guide pour les Frameworks avec l'API Environnement](../guide/api-environment-frameworks.md).

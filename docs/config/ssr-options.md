@@ -1,35 +1,35 @@
-# SSR Options
+# Options SSR
 
-Unless noted, the options in this section are applied to both dev and build.
+Sauf mention contraire, les options de cette section s'appliquent à build et preview.
 
 ## ssr.external
 
 - **Type:** `string[] | true`
 - **Related:** [SSR Externals](/guide/ssr#ssr-externals)
 
-Externalize the given dependencies and their transitive dependencies for SSR. By default, all dependencies are externalized except for linked dependencies (for HMR). If you prefer to externalize the linked dependency, you can pass its name to this option.
+Externalise les dépendances données et leurs dépendances transitives pour SSR. Par défaut, toutes les dépendances sont externalisées sauf les dépendances liées (pour HMR). Si vous préférez externaliser la dépendance liée, vous pouvez passer son nom à cette option.
 
-If `true`, all dependencies including linked dependencies are externalized.
+Si `true`, toutes les dépendances, y compris les dépendances liées, sont externalisées.
 
-Note that the explicitly listed dependencies (using `string[]` type) will always take priority if they're also listed in `ssr.noExternal` (using any type).
+Note que les dépendances explicitement listées (en utilisant le type `string[]`) prendront toujours la priorité si elles sont également listées dans `ssr.noExternal` (en utilisant n'importe quel type).
 
 ## ssr.noExternal
 
 - **Type:** `string | RegExp | (string | RegExp)[] | true`
 - **Related:** [SSR Externals](/guide/ssr#ssr-externals)
 
-Prevent listed dependencies from being externalized for SSR, which they will get bundled in build. By default, only linked dependencies are not externalized (for HMR). If you prefer to externalize the linked dependency, you can pass its name to the `ssr.external` option.
+Empêche les dépendances listées d'être externalisées pour le SSR, qui seront bundlées dans build. Par défaut, seules les dépendances liées ne sont pas externalisées (pour HMR). Si vous préférez externaliser la dépendance liée, vous pouvez passer son nom à l'option `ssr.external`.
 
-If `true`, no dependencies are externalized. However, dependencies explicitly listed in `ssr.external` (using `string[]` type) can take priority and still be externalized. If `ssr.target: 'node'` is set, Node.js built-ins will also be externalized by default.
+Si `true`, aucune dépendance n'est externalisée. Cependant, les dépendances explicitement listées dans `ssr.external` (en utilisant le type `string[]`) peuvent prendre la priorité et être externalisées. Si `ssr.target: 'node'` est configuré, les dépendances intégrées de Node.js seront également externalisées par défaut.
 
-Note that if both `ssr.noExternal: true` and `ssr.external: true` are configured, `ssr.noExternal` takes priority and no dependencies are externalized.
+Note que si `ssr.noExternal: true` et `ssr.external: true` sont configurés, `ssr.noExternal` prendra la priorité et aucune dépendance ne sera externalisée.
 
 ## ssr.target
 
 - **Type:** `'node' | 'webworker'`
 - **Default:** `node`
 
-Build target for the SSR server.
+Cible de build pour le serveur SSR.
 
 ## ssr.resolve.conditions
 
@@ -37,20 +37,20 @@ Build target for the SSR server.
 - **Default:** `['module', 'node', 'development|production']` (`defaultServerConditions`) (`['module', 'browser', 'development|production']` (`defaultClientConditions`) for `ssr.target === 'webworker'`)
 - **Related:** [Resolve Conditions](./shared-options.md#resolve-conditions)
 
-These conditions are used in the plugin pipeline, and only affect non-externalized dependencies during the SSR build. Use `ssr.resolve.externalConditions` to affect externalized imports.
+Ces conditions sont utilisées dans le pipeline de plugin, et ne s'appliquent qu'aux dépendances non externalisées lors du build SSR. Utilisez `ssr.resolve.externalConditions` pour affecter les imports externalisés.
 
 ## ssr.resolve.externalConditions
 
 - **Type:** `string[]`
 - **Default:** `['node']`
 
-Conditions that are used during ssr import (including `ssrLoadModule`) of externalized direct dependencies (external dependencies imported by Vite).
+Conditions utilisées lors de l'importation SSR (y compris `ssrLoadModule`) des dépendances directes externalisées (dépendances externalisées importées par Vite).
 
 :::tip
 
-When using this option, make sure to run Node with [`--conditions` flag](https://nodejs.org/docs/latest/api/cli.html#-c-condition---conditionscondition) with the same values in both dev and build to get a consistent behavior.
+Lorsque vous utilisez cette option, assurez-vous de lancer Node avec le [flag `--conditions`](https://nodejs.org/docs/latest/api/cli.html#-c-condition---conditionscondition) avec les mêmes valeurs dans les deux environnements de développement et de build pour obtenir un comportement cohérent.
 
-For example, when setting `['node', 'custom']`, you should run `NODE_OPTIONS='--conditions custom' vite` in dev and `NODE_OPTIONS="--conditions custom" node ./dist/server.js` after build.
+Par exemple, lorsque vous définissez `['node', 'custom']`, vous devez lancer `NODE_OPTIONS='--conditions custom' vite` dans l'environnement de développement et `NODE_OPTIONS="--conditions custom" node ./dist/server.js` après le build.
 
 :::
 
@@ -59,4 +59,4 @@ For example, when setting `['node', 'custom']`, you should run `NODE_OPTIONS='--
 - **Type:** `string[]`
 - **Default:** `['module', 'jsnext:main', 'jsnext']`
 
-List of fields in `package.json` to try when resolving a package's entry point. Note this takes lower precedence than conditional exports resolved from the `exports` field: if an entry point is successfully resolved from `exports`, the main field will be ignored. This setting only affect non-externalized dependencies.
+Liste des champs dans `package.json` à essayer lors de la résolution du point d'entrée d'un package. Notez que cela prend une priorité inférieure aux exports conditionnels résolus à partir du champ `exports` : si un point d'entrée est résolu avec succès à partir de `exports`, le champ principal sera ignoré. Cette configuration ne s'applique qu'aux dépendances non externalisées.
