@@ -13,10 +13,10 @@ head:
       content: Annonce de Vite 5.1
   - - meta
     - property: og:image
-      content: https://vite.dev/og-image-announcing-vite5-1.png
+      content: https://fr.vite.dev/og-image-announcing-vite5-1.png
   - - meta
     - property: og:url
-      content: https://vite.dev/blog/announcing-vite5-1
+      content: https://fr.vite.dev/blog/announcing-vite5-1
   - - meta
     - property: og:description
       content: Annonce de la sortie de Vite 5.1

@@ -1,6 +1,6 @@
 <p align="center">
-  <a href="https://vite.dev" target="_blank" rel="noopener noreferrer">
-    <img width="180" src="https://vite.dev/logo.svg" alt="Vite logo">
+  <a href="https://fr.vite.dev" target="_blank" rel="noopener noreferrer">
+    <img width="180" src="https://fr.vite.dev/logo.svg" alt="Vite logo">
   </a>
 </p>
 <br/>
@@ -24,19 +24,19 @@
 - 🔩 Interface de plugin universelle
 - 🔑 APIs fortement typées
 
-Vite (Mot français pour "rapide", prononcé [`/vit/`](https://cdn.jsdelivr.net/gh/vitejs/vite@main/docs/public/vite.mp3)) est un nouveau genre d'outil de build frontend qui améliore significativement l'expérience développeur frontend. Il est constitué de deux parties principales:
+Vite (/vit/ à prononcer comme en français) est un nouveau genre d'outil de build frontend qui améliore significativement l'expérience développeur frontend. Il est constitué de deux parties principales:
 
-- Un serveur de développement qui sert vos ressources à travers des [modules natifs ES](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules), avec des [fonctionnalités incluses variées](https://vite.dev/guide/features.html) et un système de [Hot Module Replacement (HMR)](https://vite.dev/guide/features.html#hot-module-replacement) étonnamment rapide.
+- Un serveur de développement qui sert vos ressources à travers des [modules natifs ES](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules), avec des [fonctionnalités incluses variées](https://fr.vite.dev/guide/features.html) et un système de [Hot Module Replacement (HMR)](https://fr.vite.dev/guide/features.html#hot-module-replacement) étonnamment rapide.
 
-- Une [commande de build](https://vite.dev/guide/build.html) qui bundle votre code avec [Rollup](https://rollupjs.org), préconfiguré pour sortir des assets hautement optimisés pour la production.
+- Une [commande de build](https://fr.vite.dev/guide/build.html) qui bundle votre code avec [Rollup](https://rollupjs.org), préconfiguré pour sortir des assets hautement optimisés pour la production.
 
-De plus, Vite est hautement extensible via son [API de Plugin](https://vite.dev/guide/api-plugin.html) et son [API JavaScript](https://vite.dev/guide/api-javascript.html) avec du support complet de typage.
+De plus, Vite est hautement extensible via son [API de Plugin](https://fr.vite.dev/guide/api-plugin.html) et son [API JavaScript](https://fr.vite.dev/guide/api-javascript.html) avec du support complet de typage.
 
-[Lire la documentation pour en savoir plus](https://vite.dev).
+[Lire la documentation pour en savoir plus](https://fr.vite.dev).
 
-## Paquets
+## Packages
 
-| Paquet                                         | Version (cliquer pour le changelog )                                                                                                    |
+| Package                                         | Version (cliquer pour le changelog )                                                                                                    |
 | ----------------------------------------------- | :-------------------------------------------------------------------------------------------------------------------------------- |
 | [vite](packages/vite)                           | [![vite version](https://img.shields.io/npm/v/vite.svg?label=%20)](packages/vite/CHANGELOG.md)                                    |
 | [@vitejs/plugin-legacy](packages/plugin-legacy) | [![plugin-legacy version](https://img.shields.io/npm/v/@vitejs/plugin-legacy.svg?label=%20)](packages/plugin-legacy/CHANGELOG.md) |

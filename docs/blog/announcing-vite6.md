@@ -13,10 +13,10 @@ head:
       content: Annonce de Vite 6
   - - meta
     - property: og:image
-      content: https://vite.dev/og-image-announcing-vite6.png
+      content: https://fr.vite.dev/og-image-announcing-vite6.png
   - - meta
     - property: og:url
-      content: https://vite.dev/blog/announcing-vite6
+      content: https://fr.vite.dev/blog/announcing-vite6
   - - meta
     - property: og:description
       content: Annonce de la sortie de Vite 6
@@ -49,7 +49,7 @@ Le mois dernier, la communauté s'est réunie pour la troisième édition de la 
 
 [Stackblitz](https://stackblitz.com) a révélé [bolt.new](https://bolt.new), une application Remix qui combine Claude et WebContainers et vous permet de prompt, modifier, exécuter et déployer des applications full-stack. Nate Weiner a annoncé [One](https://onestack.dev/), un nouveau framework React Vite pour le web et natif. Storybook a présenté leurs dernières fonctionnalités de test pilotées par Vitest [testing features](https://youtu.be/8t5wxrFpCQY?si=PYZoWKf-45goQYDt). Et bien plus encore. Nous vous encourageons à regarder [les 43 conférences](https://www.youtube.com/playlist?list=PLqGQbXn_GDmnObDzgjUF4Krsfl6OUKxtp). Les conférenciers ont fait un effort significatif pour nous partager ce que chaque projet etait en train de faire.
 
-Vite a également mis à jour sa page d'accueil et cleané son domaine. Vous devriez mettre à jour vos URL pour pointer vers le nouveau domaine [vite.dev](https://vite.dev). Le nouveau design et l'implémentation a été fait par VoidZero, par les mêmes personnes qui ont fait leur site web. Remerciement spéciaux à [Vicente Rodriguez](https://bento.me/rmoon) et [Simon Le Marchant](https://marchantweb.com/).
+Vite a également mis à jour sa page d'accueil et cleané son domaine. Vous devriez mettre à jour vos URL pour pointer vers le nouveau domaine [vite.dev](https://fr.vite.dev). Le nouveau design et l'implémentation a été fait par VoidZero, par les mêmes personnes qui ont fait leur site web. Remerciement spéciaux à [Vicente Rodriguez](https://bento.me/rmoon) et [Simon Le Marchant](https://marchantweb.com/).
 
 ## La prochaine version majeure de Vite est arrivée
 

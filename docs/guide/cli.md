@@ -38,7 +38,7 @@ vite [root]
 
 ### `vite build`
 
-Build pour la production.
+Construction pour la production.
 
 #### Utilisation
 

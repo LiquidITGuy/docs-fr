@@ -126,7 +126,7 @@ Ou en l'important dans l'application Keychain Access et en mettant à jour la co
 
 Lorsque le serveur / serveur WebSocket reçoit un en-tête HTTP volumineux, la requête sera abandonnée et l'avertissement suivant s'affichera.
 
-> Server responded with status code 431. See https://vite.dev/guide/troubleshooting.html#_431-request-header-fields-too-large.
+> Server responded with status code 431. See https://fr.vite.dev/guide/troubleshooting.html#_431-request-header-fields-too-large.
 
 Cela est dû au fait que Node.js limite la taille des en-têtes de requête pour mitiger [CVE-2018-12121](https://www.cve.org/CVERecord?id=CVE-2018-12121).
 

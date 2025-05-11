@@ -13,10 +13,10 @@ head:
       content: Annonce de Vite 5
   - - meta
     - property: og:image
-      content: https://vite.dev/og-image-announcing-vite5.png
+      content: https://fr.vite.dev/og-image-announcing-vite5.png
   - - meta
     - property: og:url
-      content: https://vite.dev/blog/announcing-vite5
+      content: https://fr.vite.dev/blog/announcing-vite5
   - - meta
     - property: og:description
       content: Annonce de la sortie de Vite 5
@@ -74,7 +74,7 @@ Vite ne supporte plus Node.js 14 / 16 / 17 / 19, qui a atteint sa date de fin de
 
 ## Performances
 
-En plus des améliorations des performances de build de Rollup 4, il existe un guide pour vous aider à identifier et résoudre les problèmes de performances communs à [https://vite.dev/guide/performance](/guide/performance).
+En plus des améliorations des performances de build de Rollup 4, il existe un guide pour vous aider à identifier et résoudre les problèmes de performances communs à [https://fr.vite.dev/guide/performance](/guide/performance).
 
 Vite 5 introduit [server.warmup](/guide/performance.html#warm-up-frequently-used-files), une nouvelle fonctionnalité pour améliorer le temps de démarrage. Il vous permet de définir une liste de modules qui devraient être prétransformés dès que le serveur démarre. Lorsque vous utilisez [`--open` ou `server.open`](/config/server-options.html#server-open), Vite démarrera également automatiquement le point d'entrée de votre application ou l'URL fournie pour l'ouvrir.
 

@@ -2,7 +2,7 @@
 
 Nous sommes très heureux que vous souhaitiez contribuer à Vite ! Avant de soumettre votre contribution, veuillez lire le guide suivant. Nous vous suggérons également de lire la [Philosophie du projet](https://vitejs.dev/guide/philosophy) dans notre documentation.
 
-Vous pouvez utiliser [StackBlitz Codeflow](https://stackblitz.com/codeflow) pour corriger les bugs ou implémenter des fonctionnalités. Vous verrez un bouton Codeflow sur les bugs pour commencer une PR pour les corriger. Un bouton apparaîtra également sur les PR pour les revoir sans avoir besoin de vérifier la branche localement. Lorsque vous utilisez Codeflow, le dépôt Vite sera cloné pour vous dans un éditeur en ligne, avec le package Vite construit en mode watch prêt à tester vos modifications. Si vous souhaitez en savoir plus, consultez la [documentation Codeflow](https://developer.stackblitz.com/codeflow/what-is-codeflow).
+Vous pouvez utiliser [StackBlitz Codeflow](https://stackblitz.com/codeflow) pour corriger les bugs ou implémenter des fonctionnalités. Vous verrez un bouton Codeflow sur les bugs pour commencer une PR pour les corriger. Un bouton apparaîtra également sur les PR pour les revoir sans avoir besoin de vérifier la branche localement. Lorsque vous utilisez Codeflow, le dépôt Vite sera cloné pour vous dans un éditeur en ligne, avec le package Vite construit en mode observateur (watch) prêt à tester vos modifications. Si vous souhaitez en savoir plus, consultez la [documentation Codeflow](https://developer.stackblitz.com/codeflow/what-is-codeflow).
 
 [![Ouvrir dans Codeflow](https://developer.stackblitz.com/img/open_in_codeflow.svg)](https://pr.new/vitejs/vite)
 
@@ -10,13 +10,13 @@ Vous pouvez utiliser [StackBlitz Codeflow](https://stackblitz.com/codeflow) pour
 
 Pour développer en local, forkez le dépôt Vite et clonez-le sur votre machine locale. Le dépôt Vite est un monorepo utilisant pnpm workspaces. Le gestionnaire de paquets utilisé pour installer et lier les dépendances doit être [pnpm](https://pnpm.io/).
 
-Pour développer et tester le noyau `vite`:
+Pour développer et tester le package du noyau `vite`:
 
 1. Executez `pnpm i`dans le dossier racine de Vite.
 
 2. Executez `pnpm run build`dans le dossier racine de Vite.
 
-3. Si vous développez Vite, vous pouvez aller dans `packages/vite`et lancer `pnpm run dev`pour reconstruire Vite automatiquement chaque fois que vous changez son code.
+3. Si vous développez sur Vite en lui-même, vous pouvez aller dans `packages/vite`et lancer `pnpm run dev`pour reconstruire Vite automatiquement chaque fois que vous changez son code.
 
 Vous pouvez également utiliser [Vite.js Docker Dev](https://github.com/nystudio107/vitejs-docker-dev) pour avoir un environnement Docker configuré pour le développement de Vite.
 
@@ -24,7 +24,7 @@ Vous pouvez également utiliser [Vite.js Docker Dev](https://github.com/nystudio
 
 ### Ignorer les commits lors de l’exécution de `git blame`
 
-Nous avons un fichier `.git-blame-ignore-revs`pour ignorer les modifications de formatage.
+Nous avons un fichier `.git-blame-ignore-revs` pour ignorer les modifications de formatage.
 Pour que ce fichier soit utilisé par`git blame`, vous devez lancer la commande suivante.
 
 ```sh
@@ -49,7 +49,7 @@ Pour utiliser les points d’arrêt et explorer l’exécution du code, vous pou
 
 Certaines erreurs sont masquées et cachées en raison des couches d'abstraction et de la nature sandboxée ajoutée par Vitest, Playwright et Chromium. Afin de voir ce qui se passe réellement et le contenu de la console de devtools, suivez cette configuration :
 
-1. Ajoutez une instruction `debugger`dans le hook `afterAll`de`playground/vitestSetup.ts`. Cela mettra en pause l’exécution avant que les tests ne quittent et l’instance de navigateur Playwright ne quitte.
+1. Ajoutez une instruction `debugger` dans le hook `afterAll` de `playground/vitestSetup.ts`. Cela mettra en pause l’exécution avant que les tests ne quittent et l’instance de navigateur Playwright ne quitte.
 
 2. Lancez les tests avec la commande de script`debug-serve`, qui activera le débogage distant :`pnpm run debug-serve resolve`.
 
@@ -57,13 +57,13 @@ Certaines erreurs sont masquées et cachées en raison des couches d'abstraction
 
 4. Dans le panneau des sources dans la colonne de droite, cliquez sur le bouton de lecture pour reprendre l’exécution, et permettre aux tests de s’exécuter, ce qui ouvrira une instance de Chromium.
 
-5. En focalisant l’instance de Chromium, vous pouvez ouvrir les outils de développement du navigateur et inspecter la console pour trouver les problèmes sous-jacents.
+5. En sélectionnant l’instance de Chromium, vous pouvez ouvrir les outils de développement du navigateur et inspecter la console pour trouver les problèmes sous-jacents.
 
 6. Pour l’arrêter, arrêtez simplement le processus de test dans votre terminal.
 
-## Test de Vite contre des packages externes
+## Test de Vite avec des packages externes
 
-Vous souhaiterez peut-être tester votre copie modifiée de Vite contre un autre package construit avec Vite. Pour pnpm, après avoir construit Vite, vous pouvez utiliser [`pnpm.overrides`](https://pnpm.io/package_json#pnpmoverrides)pour cela. Notez que `pnpm.overrides`cela doit être spécifié dans la `package.json`racine, et vous devez lister le package comme une dépendance dans la `package.json`racine :
+Vous souhaiterez peut-être tester votre copie modifiée de Vite contre un autre package construit avec Vite. Pour pnpm, après avoir construit Vite, vous pouvez utiliser [`pnpm.overrides`](https://pnpm.io/package_json#pnpmoverrides)pour cela. Notez que `pnpm.overrides` doit être spécifié dans la `package.json`racine, et vous devez lister le package comme une dépendance dans la `package.json`racine :
 
 ```json
 {
@@ -86,19 +86,19 @@ Et relancez `pnpm install`pour lier le package.
 
 Chaque package sous `playground/`contient un répertoire`__tests__`. Les tests sont exécutés en utilisant [Vitest](https://vitest.dev/) + [Playwright](https://playwright.dev/) avec des intégrations personnalisées pour rendre l’écriture de tests simple. La configuration détaillée est à l’intérieur de `vitest.config.e2e.js`et des fichiers`playground/vitest*`.
 
-Certains playgrounds définissent des variantes pour exécuter le même appareil avec différentes configurations de setup. Par convention, lorsque vous exécutez un fichier de spécification de test dans un répertoire imbriqué dans`__tests__`, le setup tentera d’utiliser un fichier de configuration nommé `vite.config-{folderName}.js`à la racine du playground. Vous pouvez voir un exemple de variantes dans le [playground des assets](https://github.com/vitejs/vite/tree/main/playground/assets).
+Certains playgrounds définissent des variantes pour exécuter la même application avec différentes configurations. Par convention, lorsque vous exécutez un fichier de spécification de test dans un répertoire imbriqué dans`__tests__`, la configuration tentera d’utiliser un fichier de configuration nommé `vite.config-{folderName}.js` à la racine du playground. Vous pouvez voir un exemple de variantes dans le [playground des assets](https://github.com/vitejs/vite/tree/main/playground/assets).
 
-Avant d’exécuter les tests, assurez-vous que [Vite a été build](#repo-setup). Sur Windows, vous souhaiterez peut-être [activer le mode Développeur](https://docs.microsoft.com/en-us/windows/apps/get-started/enable-your-device-for-development) pour résoudre [les problèmes avec la création de liens symboliques pour les non-administrateurs](https://github.com/vitejs/vite/issues/7390). De plus, vous souhaiterez peut-être [définir `core.symlinks`sur `true`pour résoudre les problèmes avec les liens symboliques dans git](https://github.com/vitejs/vite/issues/5242).
+Avant d’exécuter les tests, assurez-vous que [Vite a bien été build](#repo-setup). Sur Windows, vous souhaiteriez peut-être [activer le mode Développeur](https://docs.microsoft.com/en-us/windows/apps/get-started/enable-your-device-for-development) pour résoudre [les problèmes avec la création de liens symboliques pour les non-administrateurs](https://github.com/vitejs/vite/issues/7390). De plus, vous souhaiteriez peut-être [définir `core.symlinks` à `true`pour résoudre les problèmes avec les liens symboliques dans git](https://github.com/vitejs/vite/issues/5242).
 
 Chaque test d’intégration peut être exécuté soit en mode serveur, soit en mode build.
 
-- `pnpm test`par défaut, exécute tous les tests d’intégration dans les modes serveur et build, ainsi que les tests unitaires.
+- `pnpm test` par défaut, exécute tous les tests d’intégration dans les modes serveur et build, ainsi que les tests unitaires.
 
 - `pnpm run test-serve`exécute les tests uniquement en mode serveur.
 
 - `pnpm run test-build`exécute les tests uniquement en mode build.
 
-- `pnpm run test-serve [match]`ou `pnpm run test-build [match]`exécute les tests dans des packages spécifiques qui correspondent au filtre donné. Par exemple, `pnpm run test-serve asset`exécute les tests pour les deux `playground/asset`et `vite/src/node/__tests__/asset`sous le mode serveur.
+- `pnpm run test-serve [match]`ou `pnpm run test-build [match]` exécute les tests dans des packages spécifiques qui correspondent au filtre donné. Par exemple, `pnpm run test-serve asset` exécute les tests pour les deux `playground/asset` et `vite/src/node/__tests__/asset` sous le mode serveur.
 
   Note : Le filtrage des packages n’est pas disponible pour le script`pnpm test`, qui exécute tous les tests.
 
@@ -112,7 +112,7 @@ Outre les tests sous `playground/`pour les tests d’intégration, les packages 
 
 ### Environnement de test et helpers
 
-Dans les tests sous`playground/`, vous pouvez importer l’objet `page`depuis`~utils`, qui est une instance de [`Page`](https://playwright.dev/docs/api/class-page)de Playwright qui a déjà navigué vers la page servie du playground actuel. Donc, écrire un test est aussi simple que :
+Dans les tests au sein de `playground/`, vous pouvez importer l’objet `page` depuis `~utils`, qui est une instance de [`Page`](https://playwright.dev/docs/api/class-page)de Playwright qui a déjà navigué vers la page servie du playground actuel. Donc, écrire un test est aussi simple que :
 
 ```js
 import { page } from '~utils'
@@ -128,7 +128,7 @@ Note : L’environnement de test de build utilise un [ensemble de configuration
 
 ### Étendre le jeu de tests
 
-Pour ajouter de nouveaux tests, vous devriez trouver un playground lié à la correction ou à la fonctionnalité (ou en créer un nouveau). Par exemple, le chargement des assets statiques est testé dans le [playground des assets](https://github.com/vitejs/vite/tree/main/playground/assets). Dans cette application Vite, il y a un test pour `?raw`imports avec [une section définie dans le `index.html`pour cela](https://github.com/vitejs/vite/blob/main/playground/assets/index.html#L121) :
+Pour ajouter de nouveaux tests, vous devriez trouver un playground lié à la correction ou à la fonctionnalité (ou en créer un nouveau). Par exemple, le chargement des assets statiques est testé dans le [playground des assets](https://github.com/vitejs/vite/tree/main/playground/assets). Dans cette application Vite, il y a un test pour `?rawimports` avec [une section définie dans le `index.html`pour cela](https://github.com/vitejs/vite/blob/main/playground/assets/index.html#L121) :
 
 ```html
 <h2>?raw import</h2>
@@ -160,13 +160,13 @@ test('?raw import', async () => {
 
 ## Note sur les dépendances de test
 
-Dans de nombreux cas de test, nous avons besoin de simuler des dépendances en utilisant les protocoles `link:` et `file:`. `pnpm` Traite `link:`comme des liens symboliques et `file:`comme des hardlinks. Pour tester les dépendances comme si elles étaient copiées dans`node_modules`, utilisez le protocole`file:`. Sinon, utilisez le protocole`link:`.
+Dans de nombreux cas de test, nous avons besoin de simuler des dépendances en utilisant les protocoles `link:` et `file:`. `pnpm` Traite `link:`comme des liens symboliques et `file:`comme des lien physiques. Pour tester les dépendances comme si elles étaient copiées dans`node_modules`, utilisez le protocole`file:`. Sinon, utilisez le protocole`link:`.
 
-Pour une dépendance mockée, assurez-vous d’ajouter un préfixe `@vitejs/test-`au nom du package. Cela évitera les problèmes de faux positifs.
+Pour une dépendance simulée (mockée), assurez-vous d’ajouter un préfixe `@vitejs/test-`au nom du package. Cela évitera les problèmes de faux positifs.
 
 ## Logging de débogage
 
-Vous pouvez définir la variable d’environnement `DEBUG`pour activer les logs de débogage (e.g.`DEBUG="vite:resolve"`). Pour voir tous les logs de débogage, vous pouvez définir`DEBUG="vite:*"`, mais soyez attentif, il sera assez bruyant. Vous pouvez lancer `grep -r "createDebugger('vite:" packages/vite/src/`pour voir la liste des scopes de débogage disponibles.
+Vous pouvez définir la variable d’environnement `DEBUG`pour activer les logs de débogage (e.g.`DEBUG="vite:resolve"`). Pour voir tous les logs de débogage, vous pouvez définir`DEBUG="vite:*"`, mais soyez prévenu, cela sera assez verbeux. Vous pouvez lancer `grep -r "createDebugger('vite:" packages/vite/src/`pour voir la liste des scopes de débogage disponibles.
 
 ## Guidelines pour les PR
 
@@ -221,33 +221,33 @@ Dans certains cas, nous utilisons intentionnellement des dépendances de manièr
 
 Au lieu de cela, utilisez`(await import('somedep')).default`.
 
-### Penser avant d’ajouter une dépendance
+### Réfléchir avant d’ajouter une dépendance
 
-La plupart des dépendances devraient être ajoutées à `devDependencies`même si elles sont nécessaires au runtime. Certaines exceptions sont :
+La plupart des dépendances devraient être ajoutées à `devDependencies` même si elles sont nécessaires au runtime. Certaines exceptions sont :
 
 - Packages de types. Exemple :`@types/*`.
-- Dépendances qui ne peuvent pas être correctement bundlées en raison de fichiers binaires. Exemple :`esbuild`.
-- Dépendances qui livrent leurs propres types utilisés dans les types publics de Vite. Exemple :`rollup`.
+- Les dépendances qui ne peuvent pas être correctement bundlées en raison de fichiers binaires. Exemple :`esbuild`.
+- Les dépendances qui livrent leurs propres types utilisés dans les types publics de Vite. Exemple :`rollup`.
 
-Évitez les dépendances avec de grandes dépendances transitives qui entraînent une taille excessive par rapport à la fonctionnalité qu’elles fournissent. Par exemple, `http-proxy`lui-même plus `@types/http-proxy`font un peu plus de 1 MB, mais `http-proxy-middleware`tire une tonne de dépendances qui le passent à 7 MB (!) lorsqu’un middleware personnalisé minimal sur `http-proxy`n’exige que quelques lignes de code.
+Évitez les grandes dépendances transitives qui entraînent une taille excessive par rapport à la fonctionnalité qu’elles fournissent. Par exemple, `http-proxy` ne fait en lui-même pas plus de 1MB mais `http-proxy-middleware` tire une tonne de dépendances qui le passent à 7 MB (!) lorsqu’un middleware personnalisé minimal sur `http-proxy` n’exige que quelques lignes de code.
 
 ### Assurer le support des types
 
-Vite vise à être entièrement utilisable comme dépendance dans un projet TypeScript (e.g. il doit fournir des types corrects pour VitePress), et également dans`vite.config.ts`. Cela signifie techniquement que toute dépendance dont les types sont exposés doit être ajoutée à `dependencies`au lieu de`devDependencies`. Cependant, cela signifie également que nous ne pourrons pas le lier.
+Vite vise à être entièrement utilisable comme dépendance dans un projet TypeScript (ex: il doit fournir des types corrects pour VitePress), et également dans`vite.config.ts`. Cela signifie techniquement que toute dépendance dont les types sont exposés doit être ajoutée à `dependencies` au lieu de`devDependencies`. Cependant, cela signifie également que nous ne pourrons pas le lier.
 
-Pour contourner cela, nous intégrons certains types de ces dépendances dans`packages/vite/src/types`. De cette façon, nous pouvons toujours exposer les types, mais lier le code source de la dépendance.
+Pour contourner cela, nous intégrons certains types de ces dépendances dans `packages/vite/src/types`. De cette façon, nous pouvons toujours exposer les types, mais lier le code source de la dépendance.
 
-Utilisez `pnpm run build-types-check`pour vérifier que les types liés ne dépendent pas de types dans`devDependencies`.
+Utilisez `pnpm run build-types-check` pour vérifier que les types liés ne dépendent pas de types dans`devDependencies`.
 
-Pour les types partagés entre le client et node, ils doivent être ajoutés dans`packages/vite/types`. Ces types ne sont pas liés et sont publiés tels quels (bien qu’ils soient toujours considérés comme internes). Les types de dépendances dans ce répertoire (e.g.`packages/vite/types/chokidar.d.ts`) sont obsolètes et doivent être ajoutés à`packages/vite/src/types` la place.
+Pour les types partagés entre le client et node, ils doivent être ajoutés dans`packages/vite/types`. Ces types ne sont pas liés et sont publiés tels quels (bien qu’ils soient toujours considérés comme internes). Les types de dépendances dans ce répertoire (ex:`packages/vite/types/chokidar.d.ts`) sont obsolètes et doivent être ajoutés à `packages/vite/src/types` à la place.
 
-### Penser avant d’ajouter une autre option
+### Réflechissez avant d’ajouter encore une option
 
-Nous avons déjà de nombreuses options de configuration, et nous devons éviter de résoudre un problème en ajoutant une autre option. Avant d’ajouter une option, considérez si le problème :
+Nous avons déjà de nombreuses options de configuration et nous devons éviter de résoudre un problème en ajoutant une autre option. Avant d’ajouter une option, demandez-vous si le problème :
 
 - est vraiment digne d’attention
-- peut être résolu avec une valeur par défaut intelligente
-- a une solution de contournement en utilisant des options existantes
+- peut être résolu avec une valeur par défaut plus élégante
+- a une solution de contournement utilisant des options existantes
 - peut être résolu avec un plugin au lieu d’une option
 
 ## Release
@@ -256,15 +256,15 @@ Si vous avez accès à la publication, les étapes ci-dessous expliquent comment
 
 « Release » est fait localement pour générer les journaux de release et les tags git :
 
-1. Assurez-vous que le remote git pour https://github.com/vitejs/vite est défini comme`origin`.
-2. Dans le répertoire racine du projet`vite`, branche`main`, exécutez `git pull`et `pnpm i`pour le mettre à jour.
-3. Exécutez `pnpm release`et suivez les invites pour couper une release pour un package. Il générera le journal de release, un tag git et les poussera à`origin`. Vous pouvez lancer avec le flag `--dry`pour tester.
+1. Assurez-vous que le remote git pour https://github.com/vitejs/vite est défini comme `origin`.
+2. Dans le répertoire racine du projet `vite`, branche `main`, exécutez `git pull` et `pnpm i`pour le mettre à jour.
+3. Exécutez `pnpm release` et suivez les invites pour couper une release pour un package. Il générera le journal de release, un tag git et les poussera à `origin` . Vous pouvez lancer avec le flag `--dry` pour tester.
 4. Quand la commande est terminée, il fournira un lien vers https://github.com/vitejs/vite/actions/workflows/publish.yml.
 5. Cliquez sur le lien pour visiter la page, et suivez les étapes ci-dessous.
 
 « Publish » est fait sur GitHub Actions pour publier le package à npm :
 
-1. Quelques instants après la commande, un nouveau workflow apparaîtra pour le package publié et est en attente d’approbation pour publier sur npm.
+1. Quelques instants après la commande, un nouveau workflow apparaîtra pour le package publié et sera en attente d’approbation pour publier sur npm.
 2. Cliquez sur le workflow pour ouvrir sa page.
 3. Cliquez sur le bouton « Review deployments » dans la boîte jaune, une fenêtre popup apparaîtra.
 4. Vérifiez « Release » et cliquez sur « Approve and deploy ».

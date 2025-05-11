@@ -21,12 +21,12 @@ Les plages de versions de Vite supportées par l’équipe Vite sont déterminé
 
 Par exemple, si la dernière version de Vite est 5.3.10 :
 
-- Les correctifs réguliers sont publiés pour`vite@5.3`.
-- Les correctifs importants et les correctifs de sécurité sont apportés à `vite@4`et`vite@5.2`.
-- Les correctifs de sécurité sont également apportés à`vite@3`, et`vite@5.1`.
-- `vite@2`et `vite@5.0`ne sont plus supportés. Les utilisateurs doivent mettre à jour pour recevoir des mises à jour.
+- Les correctifs réguliers sont publiés pour `vite@5.3`.
+- Les correctifs importants et les correctifs de sécurité sont rétroportés à `vite@4` et `vite@5.2`.
+- Les correctifs de sécurité sont également rétroportés à `vite@3`, et`vite@5.1`.
+- `vite@2` et `vite@5.0` ne sont plus supportés. Les utilisateurs doivent mettre à jour pour recevoir des mises à jour.
 
-Nous recommandons de mettre à jour Vite régulièrement. Consultez les [guides de migration](https://vite.dev/guide/migration.html) lorsque vous mettez à jour vers chaque Majeur. L’équipe Vite travaille de près avec les principaux projets de l’écosystème pour garantir la qualité des nouvelles versions. Nous testons les nouvelles versions de Vite avant de les publier via le projet [vite-ecosystem-ci](https://github.com/vitejs/vite-ecosystem-ci). La plupart des projets utilisant Vite devraient être en mesure de proposer un support ou de migrer vers de nouvelles versions dès qu’elles sont publiées.
+Nous recommandons de mettre à jour Vite régulièrement. Consultez les [guides de migration](https://fr.vite.dev/guide/migration.html) lorsque vous mettez à jour vers chaque Majeur. L’équipe Vite travaille en étroite collaboration avec les principaux projets de l’écosystème pour garantir la qualité des nouvelles versions. Nous testons les nouvelles versions de Vite avant de les publier via le projet [vite-ecosystem-ci](https://github.com/vitejs/vite-ecosystem-ci). La plupart des projets utilisant Vite devraient être en mesure de proposer un support ou de migrer vers de nouvelles versions dès qu’elles sont publiées.
 
 ## Edge Cases du versionning sémantique
 
@@ -54,7 +54,7 @@ Les préreleases permettent aux utilisateurs et aux contributeurs de l’écosys
 
 ## Dépréciations
 
-Nous déprécions périodiquement des fonctionnalités qui ont été remplacées par des alternatives meilleures dans les releases mineures. Les fonctionnalités dépréciées continueront à fonctionner avec un avertissement de type ou un message de journalisation. Elles seront supprimées dans la prochaine version majeure après avoir été dépréciées. Le [Guide de migration](https://vite.dev/guide/migration.html) pour chaque majeur listera ces suppressions et documentera un chemin de migration pour chacune d’elles.
+Nous déprécions périodiquement des fonctionnalités qui ont été remplacées par des alternatives meilleures dans les releases mineures. Les fonctionnalités dépréciées continueront à fonctionner avec un avertissement de type ou un message de journalisation. Elles seront supprimées dans la prochaine version majeure après avoir été dépréciées. Le [Guide de migration](https://fr.vite.dev/guide/migration.html) pour chaque majeur listera ces suppressions et documentera un chemin de migration pour chacune d’elles.
 
 ## Fonctionnalités expérimentales
 

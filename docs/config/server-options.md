@@ -215,7 +215,7 @@ Consultez [`vite-setup-catalogue`](https://github.com/sapphi-red/vite-setup-cata
 Avec la configuration par défaut, on s'attend à ce que les reverse proxys devant Vite prennent en charge le proxy WebSocket. Si le client HMR de Vite ne parvient pas à se connecter en WebSocket, le client retombera sur une connexion WebSocket directe au serveur HMR de Vite, contournant les reverse proxys :
 
 ```
-Fallback de connexion websocket directe. Consultez https://vite.dev/config/server-options.html#server-hmr pour supprimer l'erreur de connexion précédente.
+Fallback de connexion websocket directe. Consultez https://fr.vite.dev/config/server-options.html#server-hmr pour supprimer l'erreur de connexion précédente.
 ```
 
 L'erreur qui apparaît dans le navigateur lorsque le fallback se produit peut être ignorée. Pour éviter l'erreur en contournant directement les reverse proxys, vous pouvez soit :

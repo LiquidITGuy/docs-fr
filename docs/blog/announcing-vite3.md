@@ -13,10 +13,10 @@ head:
       content: Annonce de Vite 3
   - - meta
     - property: og:image
-      content: https://vite.dev/og-image-announcing-vite3.png
+      content: https://fr.vite.dev/og-image-announcing-vite3.png
   - - meta
     - property: og:url
-      content: https://vite.dev/blog/announcing-vite3
+      content: https://fr.vite.dev/blog/announcing-vite3
   - - meta
     - property: og:description
       content: Annonce de la sortie de Vite 3
@@ -29,7 +29,7 @@ head:
 
 _23 Juillet, 2022_ - Consultez l'annonce de la sortie de [Vite 4.0](./announcing-vite4.md)
 
-En février dernier, [Evan You](https://twitter.com/youyuxi) a publié Vite 2. Depuis, son adoption a continué de croître sans cesse, atteignant plus d'1 million de téléchargements par semaine. Un écosystème étendu s'est rapidement formé après sa sortie. Vite est à l'origine d'une course à la réinvention dans le monde des frameworks Web. [Nuxt 3](https://v3.nuxtjs.org/) utilise Vite par défaut. [SvelteKit](https://kit.svelte.dev/), [Astro](https://astro.build/), [Hydrogen](https://hydrogen.shopify.dev/), et [SolidStart](https://docs.solidjs.com/quick-start) sont tous construits avec Vite. [Laravel a décidé d'utiliser Vite par défaut](https://laravel.com/docs/9.x/vite). [Vite Ruby](https://vite-ruby.netlify.app/) montre comment Vite peut améliorer l'expérience de développement de Rails. [Vitest](https://vitest.dev) progresse comme une alternative Vite-native à Jest. Vite est derrière les nouvelles fonctionnalités de [Cypress](https://docs.cypress.io/guides/component-testing/writing-your-first-component-test) et les nouvelles fonctionnalités de tests de composant de [Playwright](https://playwright.dev/docs/test-components), Storybook a [Vite comme constructeur officiel](https://github.com/storybookjs/builder-vite). Et [la liste continue](https://patak.dev/vite/ecosystem.html). Les responsables de la plupart de ces projets ont participé à l'amélioration du noyau Vite en travaillant de près avec le [team](https://vite.dev/team) et d'autres contributeurs.
+En février dernier, [Evan You](https://twitter.com/youyuxi) a publié Vite 2. Depuis, son adoption a continué de croître sans cesse, atteignant plus d'1 million de téléchargements par semaine. Un écosystème étendu s'est rapidement formé après sa sortie. Vite est à l'origine d'une course à la réinvention dans le monde des frameworks Web. [Nuxt 3](https://v3.nuxtjs.org/) utilise Vite par défaut. [SvelteKit](https://kit.svelte.dev/), [Astro](https://astro.build/), [Hydrogen](https://hydrogen.shopify.dev/), et [SolidStart](https://docs.solidjs.com/quick-start) sont tous construits avec Vite. [Laravel a décidé d'utiliser Vite par défaut](https://laravel.com/docs/9.x/vite). [Vite Ruby](https://vite-ruby.netlify.app/) montre comment Vite peut améliorer l'expérience de développement de Rails. [Vitest](https://vitest.dev) progresse comme une alternative Vite-native à Jest. Vite est derrière les nouvelles fonctionnalités de [Cypress](https://docs.cypress.io/guides/component-testing/writing-your-first-component-test) et les nouvelles fonctionnalités de tests de composant de [Playwright](https://playwright.dev/docs/test-components), Storybook a [Vite comme constructeur officiel](https://github.com/storybookjs/builder-vite). Et [la liste continue](https://patak.dev/vite/ecosystem.html). Les responsables de la plupart de ces projets ont participé à l'amélioration du noyau Vite en travaillant de près avec le [team](https://fr.vite.dev/team) et d'autres contributeurs.
 
 ![Image de couverture de l'annonce de Vite 3](/og-image-announcing-vite3.png)
 
@@ -41,13 +41,13 @@ Liens rapides :
 - [Guide de migration](https://v3.vite.dev/guide/migration.html)
 - [Changelog](https://github.com/vitejs/vite/blob/main/packages/vite/CHANGELOG.md#300-2022-07-13)
 
-Si vous êtes nouveau dans Vite, nous vous recommandons de lire le [Guide pourquoi Vite](https://vite.dev/guide/why.html). Ensuite, consultez [le guide de démarrage](https://vite.dev/guide/) et le [Guide des fonctionnalités](https://vite.dev/guide/features) pour voir ce que Vite fournit par défaut. Comme d'habitude, les contributions sont bienvenues sur [GitHub](https://github.com/vitejs/vite). Plus de [600 contributeurs](https://github.com/vitejs/vite/graphs/contributors) ont contribué à améliorer Vite jusqu'à présent. Suivez les mises à jour sur [Twitter](https://twitter.com/vite_js), ou rejoignez les discussions avec d'autres utilisateurs de Vite sur notre [serveur de chat Discord](http://chat.vite.dev/).
+Si vous êtes nouveau dans Vite, nous vous recommandons de lire le [Guide pourquoi Vite](https://fr.vite.dev/guide/why.html). Ensuite, consultez [le guide de démarrage](https://fr.vite.dev/guide/) et le [Guide des fonctionnalités](https://fr.vite.dev/guide/features) pour voir ce que Vite fournit par défaut. Comme d'habitude, les contributions sont bienvenues sur [GitHub](https://github.com/vitejs/vite). Plus de [600 contributeurs](https://github.com/vitejs/vite/graphs/contributors) ont contribué à améliorer Vite jusqu'à présent. Suivez les mises à jour sur [Twitter](https://twitter.com/vite_js), ou rejoignez les discussions avec d'autres utilisateurs de Vite sur notre [serveur de chat Discord](http://chat.vite.dev/).
 
 ## Nouvelles documentations
 
-Consultez [vite.dev](https://vite.dev) pour profiter des nouvelles documentations de Vite 3. Vite utilise maintenant le nouveau [VitePress](https://vitepress.vuejs.org) thème par défaut, avec un mode sombre entre autres fonctionnalités.
+Consultez [vite.dev](https://fr.vite.dev) pour profiter des nouvelles documentations de Vite 3. Vite utilise maintenant le nouveau [VitePress](https://vitepress.vuejs.org) thème par défaut, avec un mode sombre entre autres fonctionnalités.
 
-[![Page d'accueil des documentations de Vite](../images/v3-docs.png)](https://vite.dev)
+[![Page d'accueil des documentations de Vite](../images/v3-docs.png)](https://fr.vite.dev)
 
 Plusieurs projets de l'écosystème ont déjà migré vers le nouveau thème (voir [Vitest](https://vitest.dev), [vite-plugin-pwa](https://vite-plugin-pwa.netlify.app/), et [VitePress](https://vitepress.vuejs.org/) lui-même).
 
@@ -185,7 +185,7 @@ En savoir plus dans le [Guide WASM](/guide/features.html#webassembly)
 
 ### ESM SSR Build par défaut
 
-La plupart des frameworks SSR dans l'écosystème utilisaient déjà des builds ESM. Donc, Vite 3 fait de l'ESM le format par défaut pour les builds SSR. Cela permet de simplifier les heuristiques d'[externalisation SSR](https://vite.dev/guide/ssr.html#ssr-externals) précédentes, externalisant les dépendances par défaut.
+La plupart des frameworks SSR dans l'écosystème utilisaient déjà des builds ESM. Donc, Vite 3 fait de l'ESM le format par défaut pour les builds SSR. Cela permet de simplifier les heuristiques d'[externalisation SSR](https://fr.vite.dev/guide/ssr.html#ssr-externals) précédentes, externalisant les dépendances par défaut.
 
 ### Améliorations de la prise en charge de la base relative
 

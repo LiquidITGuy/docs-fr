@@ -13,10 +13,10 @@ head:
       content: Annonce de Vite 4
   - - meta
     - property: og:image
-      content: https://vite.dev/og-image-announcing-vite4.png
+      content: https://fr.vite.dev/og-image-announcing-vite4.png
   - - meta
     - property: og:url
-      content: https://vite.dev/blog/announcing-vite4
+      content: https://fr.vite.dev/blog/announcing-vite4
   - - meta
     - property: og:description
       content: Annonce de la sortie de Vite 4
@@ -51,7 +51,7 @@ Docs dans d'autres langues :
 - [日本語](https://ja.vite.dev/)
 - [Español](https://es.vite.dev/)
 
-Si vous avez commencé à utiliser Vite récemment, nous vous suggérons de lire le [Guide pourquoi Vite](https://vite.dev/guide/why.html) et de consulter le [guide de démarrage](https://vite.dev/guide/) et le [guide des fonctionnalités](https://vite.dev/guide/features). Si vous souhaitez participer, les contributions sont les bienvenues sur [GitHub](https://github.com/vitejs/vite). Environ [700 contributeurs](https://github.com/vitejs/vite/graphs/contributors) ont contribué à Vite. Suivez les mises à jour sur [Twitter](https://twitter.com/vite_js) et [Mastodon](https://webtoo.ls/@vite), ou rejoignez la communauté pour collaborer avec d'autres sur notre [communauté Discord](http://chat.vite.dev/).
+Si vous avez commencé à utiliser Vite récemment, nous vous suggérons de lire le [Guide pourquoi Vite](https://fr.vite.dev/guide/why.html) et de consulter le [guide de démarrage](https://fr.vite.dev/guide/) et le [guide des fonctionnalités](https://fr.vite.dev/guide/features). Si vous souhaitez participer, les contributions sont les bienvenues sur [GitHub](https://github.com/vitejs/vite). Environ [700 contributeurs](https://github.com/vitejs/vite/graphs/contributors) ont contribué à Vite. Suivez les mises à jour sur [Twitter](https://twitter.com/vite_js) et [Mastodon](https://webtoo.ls/@vite), ou rejoignez la communauté pour collaborer avec d'autres sur notre [communauté Discord](http://chat.vite.dev/).
 
 ## Débuter avec Vite 4
 

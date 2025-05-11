@@ -1,24 +1,24 @@
 # Guide de contribution à la traduction de la documentation
 
-Ce dépôt est un modèle pour les [dépôts de traduction de la documentation Vite.js](https://github.com/vitejs?q=docs).
+Ce dépôt est un template pour les [dépôts de traduction de la documentation Vite.js](https://github.com/vitejs?q=docs).
 
 ## Création d'un dépôt de traduction
 
-1. Cliquez sur [*Utiliser ce modèle*](https://github.com/tony19/vite-docs-template/generate) pour créer un nouveau dépôt de traduction dans votre compte GitHub personnel.
+1. Cliquez sur [*Utiliser ce template*](https://github.com/tony19/vite-docs-template/generate) pour créer un nouveau dépôt de traduction dans votre compte GitHub personnel.
 
 2. Configurez les permissions de workflow (requis) :
 
-   - Allez dans les "Paramètres" > "Actions" > "Général" > "Permissions des workflows" de votre dépôt
-   - Sélectionnez "Permissions de lecture et d'écriture"
-   - Cliquez sur "Enregistrer"
+   - Allez dans les "Settings" > "Actions" > "General" > "Workflow permissions" de votre dépôt
+   - Sélectionnez "Read and write permissions"
+   - Cliquez sur "Save"
 
-   Il s'agit d'une exigence standard pour toutes les Actions GitHub qui doivent créer des issues ou apporter des modifications au dépôt. Sans ces permissions, l'action échouera avec une erreur `403 "Resource not accessible by integration"` lors de la création d'issues ou de la gestion des labels.
+   Il s'agit d'un prérequis standard pour toutes Action GitHub qui doivent créer des tickets ou apporter des modifications au dépôt. Sans ces permissions, l'action échouera avec une erreur `403 "Resource not accessible by integration"` lors de la création de tickets ou de la gestion des labels.
 
 3. Ce dépôt utilise l'[Action GitHub `yuki-no`](https://github.com/Gumball12/yuki-no) pour le maintenir synchronisé avec les changements de la [documentation de Vite](https://github.com/vitejs/vite/tree/main/docs). Elle crée des issues dans ce dépôt pour suivre les modifications en amont qui doivent être traduites.
 
    Vous devez configurer le champ suivant dans [`/.github/workflows/yuki-no.yml`](/.github/workflows/yuki-no.yml) :
 
-    * `track-from` : définissez-le sur un hash de commit récent du dépôt principal (vitejs/vite). C'est le point de départ pour suivre les changements - Yuki-no ne suivra que les commits après ce hash. L'utilisation d'un ancien hash de commit ralentira considérablement l'exécution initiale de l'action, car elle devra traiter chaque commit historique. (Après la première exécution réussie, Yuki-no ignore automatiquement les commits déjà traités.)
+    * `track-from` : définissez-le sur un hash de commit récent du dépôt principal (vitejs/vite). C'est le point de départ pour suivre les changements - Yuki-no ne suivra que les commits après ce hash. L'utilisation d'un ancien hash de commit ralentira considérablement l'exécution initiale de l'action, car elle devra traiter chaque commit historique. Après la première exécution réussie, Yuki-no ignore automatiquement les commits déjà traités.
 
    Par défaut, `yuki-no` utilise le bot `github-actions`. Si vous souhaitez utiliser un bot personnalisé :
 

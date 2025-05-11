@@ -13,7 +13,7 @@ head:
       content: Annonce de Vite 2.0
   - - meta
     - property: og:url
-      content: https://vite.dev/blog/announcing-vite2
+      content: https://fr.vite.dev/blog/announcing-vite2
   - - meta
     - property: og:description
       content: Annonce de la sortie de Vite 2
@@ -33,7 +33,7 @@ Vite (mot français pour "rapide", prononcé `/vit/`) est un nouvel outil de con
 
 Pour avoir une idée de la vitesse de Vite, consultez [cette vidéo de comparaison](https://twitter.com/amasad/status/1355379680275128321) de la mise en route d'une application React sur Repl.it en utilisant Vite par rappport à `create-react-app` (CRA).
 
-Si vous n'avez jamais entendu parler de Vite avant et que vous souhaitez en savoir plus sur le projet, consultez [la raison derrière le projet](https://vite.dev/guide/why.html). Si vous êtes intéressé par la différence entre Vite et d'autres outils similaires, consultez les [comparaisons](https://v5.vite.dev/guide/comparisons.html).
+Si vous n'avez jamais entendu parler de Vite avant et que vous souhaitez en savoir plus sur le projet, consultez [la raison derrière le projet](https://fr.vite.dev/guide/why.html). Si vous êtes intéressé par la différence entre Vite et d'autres outils similaires, consultez les [comparaisons](https://v5.vite.dev/guide/comparisons.html).
 
 ## Quoi de neuf dans 2.0
 
@@ -49,7 +49,7 @@ Vite 2.0 prend ce que nous avons appris le long du chemin et est redéfini de z�
 
 Insipiré par [WMR](https://github.com/preactjs/wmr), le nouveau système de plugin étend l'interface de plugin de Rollup et est [compatible avec de nombreux plugins Rollup](https://vite-rollup-plugins.patak.dev/) out of the box. Les plugins peuvent utiliser les hooks compatibles Rollup, avec des hooks supplémentaires Vite et des propriétés pour ajuster le comportement Vite uniquement (ex. différencier le développement du build ou le traitement personnalisé de HMR).
 
-L'[API programmatique](https://vite.dev/guide/api-javascript.html) a également été grandement améliorée pour faciliter les outils / frameworks de niveau supérieur construits sur Vite.
+L'[API programmatique](https://fr.vite.dev/guide/api-javascript.html) a également été grandement améliorée pour faciliter les outils / frameworks de niveau supérieur construits sur Vite.
 
 ### esbuild Powered Dep Pre-Bundling
 
@@ -65,7 +65,7 @@ Vite traite le CSS comme une entité de premier ordre du graphe des modules et p
 
 ### Support SSR (Rendu côté serveur)
 
-Vite 2.0 embarque [un support SSR expérimental](https://vite.dev/guide/ssr.html). Vite fournit des API pour charger et mettre à jour le code source ESM basé sur Node.js pendant le développement (presque comme le HMR côté serveur), et automatiquement externalise les dépendances CommonJS compatibles pour améliorer la vitesse de développement et de build SSR. Le serveur de production peut être complètement découplé de Vite, et le même montage peut être facilement adapté pour effectuer un rendu préalable / SSG.
+Vite 2.0 embarque [un support SSR expérimental](https://fr.vite.dev/guide/ssr.html). Vite fournit des API pour charger et mettre à jour le code source ESM basé sur Node.js pendant le développement (presque comme le HMR côté serveur), et automatiquement externalise les dépendances CommonJS compatibles pour améliorer la vitesse de développement et de build SSR. Le serveur de production peut être complètement découplé de Vite, et le même montage peut être facilement adapté pour effectuer un rendu préalable / SSG.
 
 Le support SSR est fourni comme une fonctionnalité de bas niveau et nous attendons à voir des frameworks l'utiliser en arrière-plan.
 
@@ -81,4 +81,4 @@ Cela était beaucoup de fonctionnalités, mais le démarrage avec Vite est simpl
 npm init @vitejs/app
 ```
 
-Ensuite, consultez [le guide](https://vite.dev/guide/) pour voir ce que Vite fournit par défaut. Vous pouvez également consulter le code source sur [GitHub](https://github.com/vitejs/vite), suivre les mises à jour sur [Twitter](https://twitter.com/vite_js), ou rejoindre les discussions avec d'autres utilisateurs de Vite sur notre [serveur de chat Discord](http://chat.vite.dev/).
+Ensuite, consultez [le guide](https://fr.vite.dev/guide/) pour voir ce que Vite fournit par défaut. Vous pouvez également consulter le code source sur [GitHub](https://github.com/vitejs/vite), suivre les mises à jour sur [Twitter](https://twitter.com/vite_js), ou rejoindre les discussions avec d'autres utilisateurs de Vite sur notre [serveur de chat Discord](http://chat.vite.dev/).
